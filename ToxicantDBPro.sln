@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToxicantDB", "ToxicantDB\ToxicantDB.csproj", "{CA3BDFDB-BCFA-4CA0-8DF4-B8A9724197A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{089EA92B-E475-42E2-8C2B-FE233B443BCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{071C1649-F1E6-4FC6-88E3-A958AD89C4BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{23E0656A-D92F-4B0D-8C1F-46D090EB83BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA3BDFDB-BCFA-4CA0-8DF4-B8A9724197A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA3BDFDB-BCFA-4CA0-8DF4-B8A9724197A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA3BDFDB-BCFA-4CA0-8DF4-B8A9724197A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA3BDFDB-BCFA-4CA0-8DF4-B8A9724197A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{089EA92B-E475-42E2-8C2B-FE233B443BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089EA92B-E475-42E2-8C2B-FE233B443BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089EA92B-E475-42E2-8C2B-FE233B443BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089EA92B-E475-42E2-8C2B-FE233B443BCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{071C1649-F1E6-4FC6-88E3-A958AD89C4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{071C1649-F1E6-4FC6-88E3-A958AD89C4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{071C1649-F1E6-4FC6-88E3-A958AD89C4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{071C1649-F1E6-4FC6-88E3-A958AD89C4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23E0656A-D92F-4B0D-8C1F-46D090EB83BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E0656A-D92F-4B0D-8C1F-46D090EB83BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E0656A-D92F-4B0D-8C1F-46D090EB83BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E0656A-D92F-4B0D-8C1F-46D090EB83BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

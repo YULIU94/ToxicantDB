@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    class ToxicManager
+    public class ToxicManager
     {
     }
 }

@@ -15,6 +15,10 @@ namespace ToxicantDB
         public FrmMain()
         {
             InitializeComponent();
+            //显示用户登录名
+            this.tssl_AdminName.Text = "  用户名："+Program.objCurrentAdmin.AdminName;
+
+            //后面可以添加权限管理
         }
 
         private void Form1_Load(object sender, EventArgs e)

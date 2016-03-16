@@ -39,9 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SysAdminService.cs" />
+    <Compile Include="AidService.cs" />
+    <Compile Include="InfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyService.cs" />
+    <Compile Include="ToxicService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
+      <Project>{704f2a0d-9893-4d05-afe8-8b446e57fc0b}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{782e126a-e5d7-4fd5-a2e2-a697b1ca03e4}</Project>
       <Name>Models</Name>

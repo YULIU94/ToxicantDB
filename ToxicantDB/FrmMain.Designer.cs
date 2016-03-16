@@ -32,6 +32,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.lbl_Current = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssl_Version = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnQueryToxic = new System.Windows.Forms.Button();
@@ -87,6 +88,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.lbl_Current);
             this.splitContainer1.Panel1.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel1.Controls.Add(this.btnQueryToxic);
             this.splitContainer1.Panel1.Controls.Add(this.btnUserManagement);
@@ -99,7 +101,6 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackgroundImage = global::ToxicantDB.Properties.Resources.FrmMain_background;
             this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip2);
             this.splitContainer1.Panel2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 22);
@@ -107,6 +108,16 @@
             this.splitContainer1.SplitterDistance = 238;
             this.splitContainer1.TabIndex = 1;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
+            // 
+            // lbl_Current
+            // 
+            this.lbl_Current.AutoSize = true;
+            this.lbl_Current.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Current.Location = new System.Drawing.Point(51, 71);
+            this.lbl_Current.Name = "lbl_Current";
+            this.lbl_Current.Size = new System.Drawing.Size(138, 28);
+            this.lbl_Current.TabIndex = 3;
+            this.lbl_Current.Text = "毒物管理系统";
             // 
             // statusStrip1
             // 
@@ -126,7 +137,7 @@
             // 
             // btnQueryToxic
             // 
-            this.btnQueryToxic.Location = new System.Drawing.Point(131, 116);
+            this.btnQueryToxic.Location = new System.Drawing.Point(140, 217);
             this.btnQueryToxic.Name = "btnQueryToxic";
             this.btnQueryToxic.Size = new System.Drawing.Size(82, 41);
             this.btnQueryToxic.TabIndex = 1;
@@ -135,7 +146,7 @@
             // 
             // btnUserManagement
             // 
-            this.btnUserManagement.Location = new System.Drawing.Point(131, 257);
+            this.btnUserManagement.Location = new System.Drawing.Point(140, 358);
             this.btnUserManagement.Name = "btnUserManagement";
             this.btnUserManagement.Size = new System.Drawing.Size(82, 41);
             this.btnUserManagement.TabIndex = 1;
@@ -144,7 +155,7 @@
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(131, 332);
+            this.btnQuit.Location = new System.Drawing.Point(140, 433);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(82, 41);
             this.btnQuit.TabIndex = 1;
@@ -153,7 +164,7 @@
             // 
             // btnPwdModification
             // 
-            this.btnPwdModification.Location = new System.Drawing.Point(12, 332);
+            this.btnPwdModification.Location = new System.Drawing.Point(21, 433);
             this.btnPwdModification.Name = "btnPwdModification";
             this.btnPwdModification.Size = new System.Drawing.Size(82, 41);
             this.btnPwdModification.TabIndex = 1;
@@ -162,7 +173,7 @@
             // 
             // btnInfoMaintenance
             // 
-            this.btnInfoMaintenance.Location = new System.Drawing.Point(12, 257);
+            this.btnInfoMaintenance.Location = new System.Drawing.Point(21, 358);
             this.btnInfoMaintenance.Name = "btnInfoMaintenance";
             this.btnInfoMaintenance.Size = new System.Drawing.Size(82, 41);
             this.btnInfoMaintenance.TabIndex = 1;
@@ -171,7 +182,7 @@
             // 
             // btnQueryAid
             // 
-            this.btnQueryAid.Location = new System.Drawing.Point(12, 187);
+            this.btnQueryAid.Location = new System.Drawing.Point(21, 288);
             this.btnQueryAid.Name = "btnQueryAid";
             this.btnQueryAid.Size = new System.Drawing.Size(82, 41);
             this.btnQueryAid.TabIndex = 1;
@@ -180,7 +191,7 @@
             // 
             // btnQueryProperty
             // 
-            this.btnQueryProperty.Location = new System.Drawing.Point(12, 116);
+            this.btnQueryProperty.Location = new System.Drawing.Point(21, 217);
             this.btnQueryProperty.Name = "btnQueryProperty";
             this.btnQueryProperty.Size = new System.Drawing.Size(82, 41);
             this.btnQueryProperty.TabIndex = 1;
@@ -189,7 +200,7 @@
             // 
             // btnInput
             // 
-            this.btnInput.Location = new System.Drawing.Point(12, 52);
+            this.btnInput.Location = new System.Drawing.Point(21, 153);
             this.btnInput.Name = "btnInput";
             this.btnInput.Size = new System.Drawing.Size(82, 41);
             this.btnInput.TabIndex = 1;
@@ -257,6 +268,7 @@
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel tssl_Version;
         private System.Windows.Forms.ToolStripStatusLabel tssl_AdminName;
+        private System.Windows.Forms.Label lbl_Current;
     }
 }
 

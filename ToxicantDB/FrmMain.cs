@@ -22,9 +22,7 @@ namespace ToxicantDB
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-                 
-        }
+        {}        
 
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
         {
@@ -48,7 +46,18 @@ namespace ToxicantDB
 
         private void btnInput_Click(object sender, EventArgs e)
         {
+            //首先判断容器中是否有其他窗体，如果有，则先关闭
+            foreach(Control item in this.splitContainer1.Panel2.Controls)
+            {
+                if (item is Form)
+                {
+                    ((Form)item).Close();
+                }
+            }
 
+            //其次嵌入新的子窗体
+            //FrmAdminLogin objFrm = new FrmAdminLogin();
+            //objFrm.TopLevel = false;
         }
 
         private void btnPwdModification_Click(object sender, EventArgs e)

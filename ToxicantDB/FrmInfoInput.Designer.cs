@@ -1,6 +1,6 @@
 ﻿namespace ToxicantDB
 {
-    partial class FrmInput
+    partial class FrmInfoInput
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblCasId = new System.Windows.Forms.Label();
             this.txtCasId = new System.Windows.Forms.TextBox();
             this.lblChemicalName = new System.Windows.Forms.Label();
@@ -56,6 +57,32 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtDensity = new System.Windows.Forms.TextBox();
             this.DescDensity = new System.Windows.Forms.Label();
+            this.gbInputProperty = new System.Windows.Forms.GroupBox();
+            this.gbInputInfo = new System.Windows.Forms.GroupBox();
+            this.dgvInfoList = new System.Windows.Forms.DataGridView();
+            this.casIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChemicalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChineseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TraditionalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RtecsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Element = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Odor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RelativeMolecular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Solubility = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Density = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.propertiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toxicDBDataSet = new ToxicantDB.ToxicDBDataSet();
+            this.infoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.infoTableAdapter = new ToxicantDB.ToxicDBDataSetTableAdapters.InfoTableAdapter();
+            this.propertiesTableAdapter = new ToxicantDB.ToxicDBDataSetTableAdapters.PropertiesTableAdapter();
+            this.btnInputClose = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.propertiesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCasId
@@ -170,7 +197,7 @@
             this.txtElement.Location = new System.Drawing.Point(502, 53);
             this.txtElement.Name = "txtElement";
             this.txtElement.Size = new System.Drawing.Size(100, 21);
-            this.txtElement.TabIndex = 0;
+            this.txtElement.TabIndex = 5;
             // 
             // label2
             // 
@@ -195,7 +222,7 @@
             this.txtOdor.Location = new System.Drawing.Point(502, 137);
             this.txtOdor.Name = "txtOdor";
             this.txtOdor.Size = new System.Drawing.Size(100, 21);
-            this.txtOdor.TabIndex = 2;
+            this.txtOdor.TabIndex = 7;
             // 
             // label4
             // 
@@ -211,7 +238,7 @@
             this.txtState.Location = new System.Drawing.Point(502, 95);
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(100, 21);
-            this.txtState.TabIndex = 1;
+            this.txtState.TabIndex = 6;
             // 
             // label5
             // 
@@ -227,14 +254,14 @@
             this.txtColor.Location = new System.Drawing.Point(502, 179);
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(100, 21);
-            this.txtColor.TabIndex = 3;
+            this.txtColor.TabIndex = 8;
             // 
             // txtRelativeMolecularMass
             // 
             this.txtRelativeMolecularMass.Location = new System.Drawing.Point(502, 221);
             this.txtRelativeMolecularMass.Name = "txtRelativeMolecularMass";
             this.txtRelativeMolecularMass.Size = new System.Drawing.Size(100, 21);
-            this.txtRelativeMolecularMass.TabIndex = 4;
+            this.txtRelativeMolecularMass.TabIndex = 9;
             // 
             // DescSolubility
             // 
@@ -259,7 +286,7 @@
             this.txtSolubility.Location = new System.Drawing.Point(777, 56);
             this.txtSolubility.Name = "txtSolubility";
             this.txtSolubility.Size = new System.Drawing.Size(100, 21);
-            this.txtSolubility.TabIndex = 0;
+            this.txtSolubility.TabIndex = 10;
             // 
             // label6
             // 
@@ -275,7 +302,7 @@
             this.txtDensity.Location = new System.Drawing.Point(777, 98);
             this.txtDensity.Name = "txtDensity";
             this.txtDensity.Size = new System.Drawing.Size(100, 21);
-            this.txtDensity.TabIndex = 1;
+            this.txtDensity.TabIndex = 11;
             // 
             // DescDensity
             // 
@@ -286,11 +313,200 @@
             this.DescDensity.TabIndex = 6;
             this.DescDensity.Text = "(g/cm3)";
             // 
-            // FrmInput
+            // gbInputProperty
+            // 
+            this.gbInputProperty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbInputProperty.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.gbInputProperty.Location = new System.Drawing.Point(372, 12);
+            this.gbInputProperty.Name = "gbInputProperty";
+            this.gbInputProperty.Size = new System.Drawing.Size(614, 244);
+            this.gbInputProperty.TabIndex = 13;
+            this.gbInputProperty.TabStop = false;
+            this.gbInputProperty.Text = "理化性质输入";
+            // 
+            // gbInputInfo
+            // 
+            this.gbInputInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbInputInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.gbInputInfo.Location = new System.Drawing.Point(24, 12);
+            this.gbInputInfo.Name = "gbInputInfo";
+            this.gbInputInfo.Size = new System.Drawing.Size(306, 292);
+            this.gbInputInfo.TabIndex = 8;
+            this.gbInputInfo.TabStop = false;
+            this.gbInputInfo.Text = "基本信息输入";
+            // 
+            // dgvInfoList
+            // 
+            this.dgvInfoList.AllowUserToAddRows = false;
+            this.dgvInfoList.AllowUserToDeleteRows = false;
+            this.dgvInfoList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvInfoList.AutoGenerateColumns = false;
+            this.dgvInfoList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInfoList.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvInfoList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInfoList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.casIdDataGridViewTextBoxColumn,
+            this.ChemicalName,
+            this.ChineseName,
+            this.TraditionalName,
+            this.RtecsId,
+            this.Element,
+            this.State,
+            this.Odor,
+            this.Color,
+            this.RelativeMolecular,
+            this.Solubility,
+            this.Density});
+            this.dgvInfoList.DataSource = this.propertiesBindingSource;
+            this.dgvInfoList.Location = new System.Drawing.Point(24, 310);
+            this.dgvInfoList.Name = "dgvInfoList";
+            this.dgvInfoList.ReadOnly = true;
+            this.dgvInfoList.RowTemplate.Height = 23;
+            this.dgvInfoList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInfoList.Size = new System.Drawing.Size(962, 346);
+            this.dgvInfoList.TabIndex = 9;
+            // 
+            // casIdDataGridViewTextBoxColumn
+            // 
+            this.casIdDataGridViewTextBoxColumn.DataPropertyName = "CasId";
+            this.casIdDataGridViewTextBoxColumn.HeaderText = "CasId";
+            this.casIdDataGridViewTextBoxColumn.Name = "casIdDataGridViewTextBoxColumn";
+            this.casIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ChemicalName
+            // 
+            this.ChemicalName.DataPropertyName = "ChemicalName";
+            this.ChemicalName.HeaderText = "ChemicalName";
+            this.ChemicalName.Name = "ChemicalName";
+            this.ChemicalName.ReadOnly = true;
+            // 
+            // ChineseName
+            // 
+            this.ChineseName.DataPropertyName = "ChineseName";
+            this.ChineseName.HeaderText = "ChineseName";
+            this.ChineseName.Name = "ChineseName";
+            this.ChineseName.ReadOnly = true;
+            // 
+            // TraditionalName
+            // 
+            this.TraditionalName.DataPropertyName = "TraditionalName";
+            this.TraditionalName.HeaderText = "TraditionalName";
+            this.TraditionalName.Name = "TraditionalName";
+            this.TraditionalName.ReadOnly = true;
+            // 
+            // RtecsId
+            // 
+            this.RtecsId.DataPropertyName = "RtecsId";
+            this.RtecsId.HeaderText = "RtecsId";
+            this.RtecsId.Name = "RtecsId";
+            this.RtecsId.ReadOnly = true;
+            // 
+            // Element
+            // 
+            this.Element.DataPropertyName = "Element";
+            this.Element.HeaderText = "Element";
+            this.Element.Name = "Element";
+            this.Element.ReadOnly = true;
+            // 
+            // State
+            // 
+            this.State.DataPropertyName = "State";
+            this.State.HeaderText = "State";
+            this.State.Name = "State";
+            this.State.ReadOnly = true;
+            // 
+            // Odor
+            // 
+            this.Odor.DataPropertyName = "Odor";
+            this.Odor.HeaderText = "Odor";
+            this.Odor.Name = "Odor";
+            this.Odor.ReadOnly = true;
+            // 
+            // Color
+            // 
+            this.Color.DataPropertyName = "Color";
+            this.Color.HeaderText = "Color";
+            this.Color.Name = "Color";
+            this.Color.ReadOnly = true;
+            // 
+            // RelativeMolecular
+            // 
+            this.RelativeMolecular.DataPropertyName = "RelativeMolecular";
+            this.RelativeMolecular.HeaderText = "RelativeMolecular";
+            this.RelativeMolecular.Name = "RelativeMolecular";
+            this.RelativeMolecular.ReadOnly = true;
+            // 
+            // Solubility
+            // 
+            this.Solubility.DataPropertyName = "Solubility";
+            this.Solubility.HeaderText = "Solubility";
+            this.Solubility.Name = "Solubility";
+            this.Solubility.ReadOnly = true;
+            // 
+            // Density
+            // 
+            this.Density.DataPropertyName = "Density";
+            this.Density.HeaderText = "Density";
+            this.Density.Name = "Density";
+            this.Density.ReadOnly = true;
+            // 
+            // propertiesBindingSource
+            // 
+            this.propertiesBindingSource.DataMember = "Properties";
+            this.propertiesBindingSource.DataSource = this.toxicDBDataSet;
+            // 
+            // toxicDBDataSet
+            // 
+            this.toxicDBDataSet.DataSetName = "ToxicDBDataSet";
+            this.toxicDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // infoBindingSource
+            // 
+            this.infoBindingSource.DataMember = "Info";
+            this.infoBindingSource.DataSource = this.toxicDBDataSet;
+            // 
+            // infoTableAdapter
+            // 
+            this.infoTableAdapter.ClearBeforeFill = true;
+            // 
+            // propertiesTableAdapter
+            // 
+            this.propertiesTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnInputClose
+            // 
+            this.btnInputClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInputClose.Location = new System.Drawing.Point(890, 267);
+            this.btnInputClose.Name = "btnInputClose";
+            this.btnInputClose.Size = new System.Drawing.Size(96, 32);
+            this.btnInputClose.TabIndex = 14;
+            this.btnInputClose.Text = "关闭窗口";
+            this.btnInputClose.UseVisualStyleBackColor = true;
+            this.btnInputClose.Click += new System.EventHandler(this.btnInputClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(759, 267);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(96, 32);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "保存信息";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnInputClose_Click);
+            // 
+            // FrmInfoInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 681);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnInputClose);
+            this.Controls.Add(this.dgvInfoList);
             this.Controls.Add(this.DescDensity);
             this.Controls.Add(this.DescSolubility);
             this.Controls.Add(this.DescChemicalName);
@@ -319,12 +535,18 @@
             this.Controls.Add(this.lblElement);
             this.Controls.Add(this.txtCasId);
             this.Controls.Add(this.lblCasId);
+            this.Controls.Add(this.gbInputProperty);
+            this.Controls.Add(this.gbInputInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FrmInput";
+            this.Name = "FrmInfoInput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "输入信息";
             this.Load += new System.EventHandler(this.FrmInput_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.propertiesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,5 +582,27 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDensity;
         private System.Windows.Forms.Label DescDensity;
+        private System.Windows.Forms.GroupBox gbInputProperty;
+        private System.Windows.Forms.GroupBox gbInputInfo;
+        private System.Windows.Forms.DataGridView dgvInfoList;
+        private ToxicDBDataSet toxicDBDataSet;
+        private System.Windows.Forms.BindingSource infoBindingSource;
+        private ToxicDBDataSetTableAdapters.InfoTableAdapter infoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn casIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource propertiesBindingSource;
+        private ToxicDBDataSetTableAdapters.PropertiesTableAdapter propertiesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChemicalName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChineseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TraditionalName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RtecsId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Element;
+        private System.Windows.Forms.DataGridViewTextBoxColumn State;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Odor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RelativeMolecular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Solubility;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Density;
+        private System.Windows.Forms.Button btnInputClose;
+        private System.Windows.Forms.Button btnSave;
     }
 }

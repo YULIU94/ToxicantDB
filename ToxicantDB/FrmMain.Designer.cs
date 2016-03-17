@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.lbl_Current = new System.Windows.Forms.Label();
+            this.lblCurrent = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssl_Version = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnQueryToxic = new System.Windows.Forms.Button();
@@ -42,7 +44,10 @@
             this.btnInfoMaintenance = new System.Windows.Forms.Button();
             this.btnQueryAid = new System.Windows.Forms.Button();
             this.btnQueryProperty = new System.Windows.Forms.Button();
-            this.btnInput = new System.Windows.Forms.Button();
+            this.btnAidInput = new System.Windows.Forms.Button();
+            this.btnDetailInput = new System.Windows.Forms.Button();
+            this.btnInfoInput = new System.Windows.Forms.Button();
+            this.gbFrmMainButtons = new System.Windows.Forms.GroupBox();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.tssl_AdminName = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
@@ -79,7 +84,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.BackgroundImage = global::ToxicantDB.Properties.Resources.Image1;
+            this.splitContainer1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.BackgroundImage")));
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.IsSplitterFixed = true;
@@ -88,7 +93,8 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.lbl_Current);
+            this.splitContainer1.Panel1.Controls.Add(this.lblCurrent);
+            this.splitContainer1.Panel1.Controls.Add(this.lblTitle);
             this.splitContainer1.Panel1.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel1.Controls.Add(this.btnQueryToxic);
             this.splitContainer1.Panel1.Controls.Add(this.btnUserManagement);
@@ -97,7 +103,10 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnInfoMaintenance);
             this.splitContainer1.Panel1.Controls.Add(this.btnQueryAid);
             this.splitContainer1.Panel1.Controls.Add(this.btnQueryProperty);
-            this.splitContainer1.Panel1.Controls.Add(this.btnInput);
+            this.splitContainer1.Panel1.Controls.Add(this.btnAidInput);
+            this.splitContainer1.Panel1.Controls.Add(this.btnDetailInput);
+            this.splitContainer1.Panel1.Controls.Add(this.btnInfoInput);
+            this.splitContainer1.Panel1.Controls.Add(this.gbFrmMainButtons);
             // 
             // splitContainer1.Panel2
             // 
@@ -109,15 +118,30 @@
             this.splitContainer1.TabIndex = 1;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
-            // lbl_Current
+            // lblCurrent
             // 
-            this.lbl_Current.AutoSize = true;
-            this.lbl_Current.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbl_Current.Location = new System.Drawing.Point(51, 71);
-            this.lbl_Current.Name = "lbl_Current";
-            this.lbl_Current.Size = new System.Drawing.Size(138, 28);
-            this.lbl_Current.TabIndex = 3;
-            this.lbl_Current.Text = "毒物管理系统";
+            this.lblCurrent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCurrent.AutoSize = true;
+            this.lblCurrent.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblCurrent.Location = new System.Drawing.Point(62, 556);
+            this.lblCurrent.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCurrent.Name = "lblCurrent";
+            this.lblCurrent.Size = new System.Drawing.Size(110, 31);
+            this.lblCurrent.TabIndex = 4;
+            this.lblCurrent.Text = "欢迎使用";
+            this.lblCurrent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTitle.Location = new System.Drawing.Point(51, 37);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(138, 28);
+            this.lblTitle.TabIndex = 3;
+            this.lblTitle.Text = "毒物管理系统";
             // 
             // statusStrip1
             // 
@@ -137,75 +161,104 @@
             // 
             // btnQueryToxic
             // 
-            this.btnQueryToxic.Location = new System.Drawing.Point(140, 217);
+            this.btnQueryToxic.Location = new System.Drawing.Point(129, 250);
             this.btnQueryToxic.Name = "btnQueryToxic";
-            this.btnQueryToxic.Size = new System.Drawing.Size(82, 41);
-            this.btnQueryToxic.TabIndex = 1;
+            this.btnQueryToxic.Size = new System.Drawing.Size(94, 41);
+            this.btnQueryToxic.TabIndex = 2;
             this.btnQueryToxic.Text = "毒性查询";
             this.btnQueryToxic.UseVisualStyleBackColor = true;
             // 
             // btnUserManagement
             // 
-            this.btnUserManagement.Location = new System.Drawing.Point(140, 358);
+            this.btnUserManagement.Location = new System.Drawing.Point(129, 388);
             this.btnUserManagement.Name = "btnUserManagement";
-            this.btnUserManagement.Size = new System.Drawing.Size(82, 41);
-            this.btnUserManagement.TabIndex = 1;
+            this.btnUserManagement.Size = new System.Drawing.Size(94, 41);
+            this.btnUserManagement.TabIndex = 5;
             this.btnUserManagement.Text = "用户管理";
             this.btnUserManagement.UseVisualStyleBackColor = true;
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(140, 433);
+            this.btnQuit.Location = new System.Drawing.Point(129, 448);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(82, 41);
-            this.btnQuit.TabIndex = 1;
+            this.btnQuit.Size = new System.Drawing.Size(94, 41);
+            this.btnQuit.TabIndex = 7;
             this.btnQuit.Text = "退出系统";
             this.btnQuit.UseVisualStyleBackColor = true;
             // 
             // btnPwdModification
             // 
-            this.btnPwdModification.Location = new System.Drawing.Point(21, 433);
+            this.btnPwdModification.Location = new System.Drawing.Point(16, 448);
             this.btnPwdModification.Name = "btnPwdModification";
-            this.btnPwdModification.Size = new System.Drawing.Size(82, 41);
-            this.btnPwdModification.TabIndex = 1;
+            this.btnPwdModification.Size = new System.Drawing.Size(94, 41);
+            this.btnPwdModification.TabIndex = 6;
             this.btnPwdModification.Text = "密码修改";
             this.btnPwdModification.UseVisualStyleBackColor = true;
             // 
             // btnInfoMaintenance
             // 
-            this.btnInfoMaintenance.Location = new System.Drawing.Point(21, 358);
+            this.btnInfoMaintenance.Location = new System.Drawing.Point(16, 388);
             this.btnInfoMaintenance.Name = "btnInfoMaintenance";
-            this.btnInfoMaintenance.Size = new System.Drawing.Size(82, 41);
-            this.btnInfoMaintenance.TabIndex = 1;
+            this.btnInfoMaintenance.Size = new System.Drawing.Size(94, 41);
+            this.btnInfoMaintenance.TabIndex = 4;
             this.btnInfoMaintenance.Text = "信息维护";
             this.btnInfoMaintenance.UseVisualStyleBackColor = true;
             // 
             // btnQueryAid
             // 
-            this.btnQueryAid.Location = new System.Drawing.Point(21, 288);
+            this.btnQueryAid.Location = new System.Drawing.Point(16, 310);
             this.btnQueryAid.Name = "btnQueryAid";
-            this.btnQueryAid.Size = new System.Drawing.Size(82, 41);
-            this.btnQueryAid.TabIndex = 1;
+            this.btnQueryAid.Size = new System.Drawing.Size(94, 41);
+            this.btnQueryAid.TabIndex = 3;
             this.btnQueryAid.Text = "急救查询";
             this.btnQueryAid.UseVisualStyleBackColor = true;
             // 
             // btnQueryProperty
             // 
-            this.btnQueryProperty.Location = new System.Drawing.Point(21, 217);
+            this.btnQueryProperty.Location = new System.Drawing.Point(16, 250);
             this.btnQueryProperty.Name = "btnQueryProperty";
-            this.btnQueryProperty.Size = new System.Drawing.Size(82, 41);
+            this.btnQueryProperty.Size = new System.Drawing.Size(94, 41);
             this.btnQueryProperty.TabIndex = 1;
             this.btnQueryProperty.Text = "理化查询";
             this.btnQueryProperty.UseVisualStyleBackColor = true;
             // 
-            // btnInput
+            // btnAidInput
             // 
-            this.btnInput.Location = new System.Drawing.Point(21, 153);
-            this.btnInput.Name = "btnInput";
-            this.btnInput.Size = new System.Drawing.Size(82, 41);
-            this.btnInput.TabIndex = 1;
-            this.btnInput.Text = "录入信息";
-            this.btnInput.UseVisualStyleBackColor = true;
+            this.btnAidInput.Location = new System.Drawing.Point(16, 176);
+            this.btnAidInput.Name = "btnAidInput";
+            this.btnAidInput.Size = new System.Drawing.Size(94, 41);
+            this.btnAidInput.TabIndex = 0;
+            this.btnAidInput.Text = "急救信息录入";
+            this.btnAidInput.UseVisualStyleBackColor = true;
+            this.btnAidInput.Click += new System.EventHandler(this.btnInput_Click_1);
+            // 
+            // btnDetailInput
+            // 
+            this.btnDetailInput.Location = new System.Drawing.Point(129, 118);
+            this.btnDetailInput.Name = "btnDetailInput";
+            this.btnDetailInput.Size = new System.Drawing.Size(94, 41);
+            this.btnDetailInput.TabIndex = 0;
+            this.btnDetailInput.Text = "详细信息录入";
+            this.btnDetailInput.UseVisualStyleBackColor = true;
+            this.btnDetailInput.Click += new System.EventHandler(this.btnDetailInput_Click);
+            // 
+            // btnInfoInput
+            // 
+            this.btnInfoInput.Location = new System.Drawing.Point(16, 118);
+            this.btnInfoInput.Name = "btnInfoInput";
+            this.btnInfoInput.Size = new System.Drawing.Size(94, 41);
+            this.btnInfoInput.TabIndex = 0;
+            this.btnInfoInput.Text = "基本信息录入";
+            this.btnInfoInput.UseVisualStyleBackColor = true;
+            this.btnInfoInput.Click += new System.EventHandler(this.btnInput_Click_1);
+            // 
+            // gbFrmMainButtons
+            // 
+            this.gbFrmMainButtons.Location = new System.Drawing.Point(0, 87);
+            this.gbFrmMainButtons.Name = "gbFrmMainButtons";
+            this.gbFrmMainButtons.Size = new System.Drawing.Size(238, 429);
+            this.gbFrmMainButtons.TabIndex = 8;
+            this.gbFrmMainButtons.TabStop = false;
             // 
             // statusStrip2
             // 
@@ -256,7 +309,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button btnInput;
+        private System.Windows.Forms.Button btnInfoInput;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Button btnQueryProperty;
         private System.Windows.Forms.Button btnQueryToxic;
@@ -268,7 +321,11 @@
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel tssl_Version;
         private System.Windows.Forms.ToolStripStatusLabel tssl_AdminName;
-        private System.Windows.Forms.Label lbl_Current;
+        private System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.Label lblCurrent;
+        private System.Windows.Forms.Button btnAidInput;
+        private System.Windows.Forms.Button btnDetailInput;
+        private System.Windows.Forms.GroupBox gbFrmMainButtons;
     }
 }
 

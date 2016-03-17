@@ -47,7 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtOdor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtState = new System.Windows.Forms.TextBox();
+            this.txtStateInfo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.txtRelativeMolecularMass = new System.Windows.Forms.TextBox();
@@ -100,6 +100,8 @@
             this.txtCasId.Name = "txtCasId";
             this.txtCasId.Size = new System.Drawing.Size(100, 21);
             this.txtCasId.TabIndex = 0;
+            this.txtCasId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCasId_KeyDown);
+            this.txtCasId.Leave += new System.EventHandler(this.txtCasId_Leave);
             // 
             // lblChemicalName
             // 
@@ -233,12 +235,12 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "颜色 :";
             // 
-            // txtState
+            // txtStateInfo
             // 
-            this.txtState.Location = new System.Drawing.Point(502, 95);
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(100, 21);
-            this.txtState.TabIndex = 6;
+            this.txtStateInfo.Location = new System.Drawing.Point(502, 95);
+            this.txtStateInfo.Name = "txtStateInfo";
+            this.txtStateInfo.Size = new System.Drawing.Size(100, 21);
+            this.txtStateInfo.TabIndex = 6;
             // 
             // label5
             // 
@@ -262,6 +264,7 @@
             this.txtRelativeMolecularMass.Name = "txtRelativeMolecularMass";
             this.txtRelativeMolecularMass.Size = new System.Drawing.Size(100, 21);
             this.txtRelativeMolecularMass.TabIndex = 9;
+            this.txtRelativeMolecularMass.Text = "0";
             // 
             // DescSolubility
             // 
@@ -287,6 +290,7 @@
             this.txtSolubility.Name = "txtSolubility";
             this.txtSolubility.Size = new System.Drawing.Size(100, 21);
             this.txtSolubility.TabIndex = 10;
+            this.txtSolubility.Text = "0";
             // 
             // label6
             // 
@@ -303,6 +307,7 @@
             this.txtDensity.Name = "txtDensity";
             this.txtDensity.Size = new System.Drawing.Size(100, 21);
             this.txtDensity.TabIndex = 11;
+            this.txtDensity.Text = "0";
             // 
             // DescDensity
             // 
@@ -497,7 +502,7 @@
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "保存信息";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnInputClose_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmInfoInput
             // 
@@ -517,7 +522,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTraditionName);
             this.Controls.Add(this.txtDensity);
-            this.Controls.Add(this.txtState);
+            this.Controls.Add(this.txtStateInfo);
             this.Controls.Add(this.lblRtecsId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtChemicalName);
@@ -572,7 +577,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtOdor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtState;
+        private System.Windows.Forms.TextBox txtStateInfo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.TextBox txtRelativeMolecularMass;

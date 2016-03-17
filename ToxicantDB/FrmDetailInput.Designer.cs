@@ -43,12 +43,18 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.gbRichText = new System.Windows.Forms.GroupBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnRichTextSave = new System.Windows.Forms.Button();
             this.cboRichTextCategory = new System.Windows.Forms.ComboBox();
             this.lblRichTextCategory = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblLd50 = new System.Windows.Forms.Label();
+            this.txtLd50 = new System.Windows.Forms.TextBox();
+            this.btnOtherInfoSave = new System.Windows.Forms.Button();
+            this.lblToxicDegree = new System.Windows.Forms.Label();
+            this.cboToxicDegree = new System.Windows.Forms.ComboBox();
             this.gbToxicQuery.SuspendLayout();
             this.gbRichText.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbToxicQuery
@@ -193,7 +199,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbRichText.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.gbRichText.Controls.Add(this.btnSave);
+            this.gbRichText.Controls.Add(this.btnRichTextSave);
             this.gbRichText.Controls.Add(this.cboRichTextCategory);
             this.gbRichText.Controls.Add(this.lblRichTextCategory);
             this.gbRichText.Location = new System.Drawing.Point(27, 157);
@@ -203,15 +209,15 @@
             this.gbRichText.TabStop = false;
             this.gbRichText.Text = "毒物资料输入";
             // 
-            // btnSave
+            // btnRichTextSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(410, 20);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(72, 28);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "保存";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnRichTextSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRichTextSave.Location = new System.Drawing.Point(410, 20);
+            this.btnRichTextSave.Name = "btnRichTextSave";
+            this.btnRichTextSave.Size = new System.Drawing.Size(72, 28);
+            this.btnRichTextSave.TabIndex = 1;
+            this.btnRichTextSave.Text = "保存";
+            this.btnRichTextSave.UseVisualStyleBackColor = true;
             // 
             // cboRichTextCategory
             // 
@@ -235,12 +241,60 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.Controls.Add(this.btnOtherInfoSave);
+            this.groupBox1.Controls.Add(this.cboToxicDegree);
+            this.groupBox1.Controls.Add(this.lblToxicDegree);
+            this.groupBox1.Controls.Add(this.txtLd50);
+            this.groupBox1.Controls.Add(this.lblLd50);
             this.groupBox1.Location = new System.Drawing.Point(553, 157);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(416, 512);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "其他信息";
+            // 
+            // lblLd50
+            // 
+            this.lblLd50.AutoSize = true;
+            this.lblLd50.Location = new System.Drawing.Point(31, 58);
+            this.lblLd50.Name = "lblLd50";
+            this.lblLd50.Size = new System.Drawing.Size(41, 12);
+            this.lblLd50.TabIndex = 0;
+            this.lblLd50.Text = "Ld50 :";
+            // 
+            // txtLd50
+            // 
+            this.txtLd50.Location = new System.Drawing.Point(102, 55);
+            this.txtLd50.Name = "txtLd50";
+            this.txtLd50.Size = new System.Drawing.Size(144, 21);
+            this.txtLd50.TabIndex = 2;
+            // 
+            // btnOtherInfoSave
+            // 
+            this.btnOtherInfoSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOtherInfoSave.Location = new System.Drawing.Point(330, 20);
+            this.btnOtherInfoSave.Name = "btnOtherInfoSave";
+            this.btnOtherInfoSave.Size = new System.Drawing.Size(72, 28);
+            this.btnOtherInfoSave.TabIndex = 1;
+            this.btnOtherInfoSave.Text = "保存";
+            this.btnOtherInfoSave.UseVisualStyleBackColor = true;
+            // 
+            // lblToxicDegree
+            // 
+            this.lblToxicDegree.AutoSize = true;
+            this.lblToxicDegree.Location = new System.Drawing.Point(31, 98);
+            this.lblToxicDegree.Name = "lblToxicDegree";
+            this.lblToxicDegree.Size = new System.Drawing.Size(65, 12);
+            this.lblToxicDegree.TabIndex = 0;
+            this.lblToxicDegree.Text = "毒性分级 :";
+            // 
+            // cboToxicDegree
+            // 
+            this.cboToxicDegree.FormattingEnabled = true;
+            this.cboToxicDegree.Location = new System.Drawing.Point(102, 95);
+            this.cboToxicDegree.Name = "cboToxicDegree";
+            this.cboToxicDegree.Size = new System.Drawing.Size(144, 20);
+            this.cboToxicDegree.TabIndex = 0;
             // 
             // FrmDetailInput
             // 
@@ -259,6 +313,8 @@
             this.gbToxicQuery.PerformLayout();
             this.gbRichText.ResumeLayout(false);
             this.gbRichText.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -280,9 +336,14 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.GroupBox gbRichText;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnRichTextSave;
         private System.Windows.Forms.ComboBox cboRichTextCategory;
         private System.Windows.Forms.Label lblRichTextCategory;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnOtherInfoSave;
+        private System.Windows.Forms.TextBox txtLd50;
+        private System.Windows.Forms.Label lblLd50;
+        private System.Windows.Forms.ComboBox cboToxicDegree;
+        private System.Windows.Forms.Label lblToxicDegree;
     }
 }

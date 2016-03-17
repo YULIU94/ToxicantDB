@@ -56,8 +56,9 @@ namespace ToxicantDB
             }
 
             //其次嵌入新的子窗体
-            //FrmAdminLogin objFrm = new FrmAdminLogin();
-            //objFrm.TopLevel = false;
+            FrmInput objFrm = new FrmInput();
+            objFrm.TopLevel = false;
+
         }
 
         private void btnPwdModification_Click(object sender, EventArgs e)

@@ -60,18 +60,6 @@
             this.gbInputProperty = new System.Windows.Forms.GroupBox();
             this.gbInputInfo = new System.Windows.Forms.GroupBox();
             this.dgvInfoList = new System.Windows.Forms.DataGridView();
-            this.casIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChemicalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChineseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TraditionalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RtecsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Element = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.State = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Odor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RelativeMolecular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Solubility = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Density = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.propertiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toxicDBDataSet = new ToxicantDB.ToxicDBDataSet();
             this.infoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -79,10 +67,37 @@
             this.propertiesTableAdapter = new ToxicantDB.ToxicDBDataSetTableAdapters.PropertiesTableAdapter();
             this.btnInputClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.toxicDBDataSet1 = new ToxicantDB.ToxicDBDataSet1();
+            this.infoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.infoTableAdapter1 = new ToxicantDB.ToxicDBDataSet1TableAdapters.InfoTableAdapter();
+            this.toxicDBDataSet2 = new ToxicantDB.ToxicDBDataSet2();
+            this.infoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.infoTableAdapter2 = new ToxicantDB.ToxicDBDataSet2TableAdapters.InfoTableAdapter();
+            this.toxicDBDataSet3 = new ToxicantDB.ToxicDBDataSet3();
+            this.infoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.infoTableAdapter3 = new ToxicantDB.ToxicDBDataSet3TableAdapters.InfoTableAdapter();
+            this.casIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChemicalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChineseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TraditionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RtecsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Element = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StateInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Odor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RelativeMolecularMass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Solubility = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Density = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.propertiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCasId
@@ -357,16 +372,16 @@
             this.casIdDataGridViewTextBoxColumn,
             this.ChemicalName,
             this.ChineseName,
-            this.TraditionalName,
+            this.TraditionName,
             this.RtecsId,
             this.Element,
-            this.State,
+            this.StateInfo,
             this.Odor,
             this.Color,
-            this.RelativeMolecular,
+            this.RelativeMolecularMass,
             this.Solubility,
             this.Density});
-            this.dgvInfoList.DataSource = this.propertiesBindingSource;
+            this.dgvInfoList.DataSource = this.infoBindingSource3;
             this.dgvInfoList.Location = new System.Drawing.Point(24, 310);
             this.dgvInfoList.Name = "dgvInfoList";
             this.dgvInfoList.ReadOnly = true;
@@ -374,90 +389,6 @@
             this.dgvInfoList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInfoList.Size = new System.Drawing.Size(962, 346);
             this.dgvInfoList.TabIndex = 9;
-            // 
-            // casIdDataGridViewTextBoxColumn
-            // 
-            this.casIdDataGridViewTextBoxColumn.DataPropertyName = "CasId";
-            this.casIdDataGridViewTextBoxColumn.HeaderText = "CasId";
-            this.casIdDataGridViewTextBoxColumn.Name = "casIdDataGridViewTextBoxColumn";
-            this.casIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ChemicalName
-            // 
-            this.ChemicalName.DataPropertyName = "ChemicalName";
-            this.ChemicalName.HeaderText = "ChemicalName";
-            this.ChemicalName.Name = "ChemicalName";
-            this.ChemicalName.ReadOnly = true;
-            // 
-            // ChineseName
-            // 
-            this.ChineseName.DataPropertyName = "ChineseName";
-            this.ChineseName.HeaderText = "ChineseName";
-            this.ChineseName.Name = "ChineseName";
-            this.ChineseName.ReadOnly = true;
-            // 
-            // TraditionalName
-            // 
-            this.TraditionalName.DataPropertyName = "TraditionalName";
-            this.TraditionalName.HeaderText = "TraditionalName";
-            this.TraditionalName.Name = "TraditionalName";
-            this.TraditionalName.ReadOnly = true;
-            // 
-            // RtecsId
-            // 
-            this.RtecsId.DataPropertyName = "RtecsId";
-            this.RtecsId.HeaderText = "RtecsId";
-            this.RtecsId.Name = "RtecsId";
-            this.RtecsId.ReadOnly = true;
-            // 
-            // Element
-            // 
-            this.Element.DataPropertyName = "Element";
-            this.Element.HeaderText = "Element";
-            this.Element.Name = "Element";
-            this.Element.ReadOnly = true;
-            // 
-            // State
-            // 
-            this.State.DataPropertyName = "State";
-            this.State.HeaderText = "State";
-            this.State.Name = "State";
-            this.State.ReadOnly = true;
-            // 
-            // Odor
-            // 
-            this.Odor.DataPropertyName = "Odor";
-            this.Odor.HeaderText = "Odor";
-            this.Odor.Name = "Odor";
-            this.Odor.ReadOnly = true;
-            // 
-            // Color
-            // 
-            this.Color.DataPropertyName = "Color";
-            this.Color.HeaderText = "Color";
-            this.Color.Name = "Color";
-            this.Color.ReadOnly = true;
-            // 
-            // RelativeMolecular
-            // 
-            this.RelativeMolecular.DataPropertyName = "RelativeMolecular";
-            this.RelativeMolecular.HeaderText = "RelativeMolecular";
-            this.RelativeMolecular.Name = "RelativeMolecular";
-            this.RelativeMolecular.ReadOnly = true;
-            // 
-            // Solubility
-            // 
-            this.Solubility.DataPropertyName = "Solubility";
-            this.Solubility.HeaderText = "Solubility";
-            this.Solubility.Name = "Solubility";
-            this.Solubility.ReadOnly = true;
-            // 
-            // Density
-            // 
-            this.Density.DataPropertyName = "Density";
-            this.Density.HeaderText = "Density";
-            this.Density.Name = "Density";
-            this.Density.ReadOnly = true;
             // 
             // propertiesBindingSource
             // 
@@ -503,6 +434,132 @@
             this.btnSave.Text = "保存信息";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // toxicDBDataSet1
+            // 
+            this.toxicDBDataSet1.DataSetName = "ToxicDBDataSet1";
+            this.toxicDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // infoBindingSource1
+            // 
+            this.infoBindingSource1.DataMember = "Info";
+            this.infoBindingSource1.DataSource = this.toxicDBDataSet1;
+            // 
+            // infoTableAdapter1
+            // 
+            this.infoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // toxicDBDataSet2
+            // 
+            this.toxicDBDataSet2.DataSetName = "ToxicDBDataSet2";
+            this.toxicDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // infoBindingSource2
+            // 
+            this.infoBindingSource2.DataMember = "Info";
+            this.infoBindingSource2.DataSource = this.toxicDBDataSet2;
+            // 
+            // infoTableAdapter2
+            // 
+            this.infoTableAdapter2.ClearBeforeFill = true;
+            // 
+            // toxicDBDataSet3
+            // 
+            this.toxicDBDataSet3.DataSetName = "ToxicDBDataSet3";
+            this.toxicDBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // infoBindingSource3
+            // 
+            this.infoBindingSource3.DataMember = "Info";
+            this.infoBindingSource3.DataSource = this.toxicDBDataSet3;
+            // 
+            // infoTableAdapter3
+            // 
+            this.infoTableAdapter3.ClearBeforeFill = true;
+            // 
+            // casIdDataGridViewTextBoxColumn
+            // 
+            this.casIdDataGridViewTextBoxColumn.DataPropertyName = "CasId";
+            this.casIdDataGridViewTextBoxColumn.HeaderText = "CasId";
+            this.casIdDataGridViewTextBoxColumn.Name = "casIdDataGridViewTextBoxColumn";
+            this.casIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ChemicalName
+            // 
+            this.ChemicalName.DataPropertyName = "ChemicalName";
+            this.ChemicalName.HeaderText = "ChemicalName";
+            this.ChemicalName.Name = "ChemicalName";
+            this.ChemicalName.ReadOnly = true;
+            // 
+            // ChineseName
+            // 
+            this.ChineseName.DataPropertyName = "ChineseName";
+            this.ChineseName.HeaderText = "ChineseName";
+            this.ChineseName.Name = "ChineseName";
+            this.ChineseName.ReadOnly = true;
+            // 
+            // TraditionName
+            // 
+            this.TraditionName.DataPropertyName = "TraditionName";
+            this.TraditionName.HeaderText = "TraditionName";
+            this.TraditionName.Name = "TraditionName";
+            this.TraditionName.ReadOnly = true;
+            // 
+            // RtecsId
+            // 
+            this.RtecsId.DataPropertyName = "RtecsId";
+            this.RtecsId.HeaderText = "RtecsId";
+            this.RtecsId.Name = "RtecsId";
+            this.RtecsId.ReadOnly = true;
+            // 
+            // Element
+            // 
+            this.Element.DataPropertyName = "Element";
+            this.Element.HeaderText = "Element";
+            this.Element.Name = "Element";
+            this.Element.ReadOnly = true;
+            // 
+            // StateInfo
+            // 
+            this.StateInfo.DataPropertyName = "StateInfo";
+            this.StateInfo.HeaderText = "StateInfo";
+            this.StateInfo.Name = "StateInfo";
+            this.StateInfo.ReadOnly = true;
+            // 
+            // Odor
+            // 
+            this.Odor.DataPropertyName = "Odor";
+            this.Odor.HeaderText = "Odor";
+            this.Odor.Name = "Odor";
+            this.Odor.ReadOnly = true;
+            // 
+            // Color
+            // 
+            this.Color.DataPropertyName = "Color";
+            this.Color.HeaderText = "Color";
+            this.Color.Name = "Color";
+            this.Color.ReadOnly = true;
+            // 
+            // RelativeMolecularMass
+            // 
+            this.RelativeMolecularMass.DataPropertyName = "RelativeMolecularMass";
+            this.RelativeMolecularMass.HeaderText = "RelativeMolecularMass";
+            this.RelativeMolecularMass.Name = "RelativeMolecularMass";
+            this.RelativeMolecularMass.ReadOnly = true;
+            // 
+            // Solubility
+            // 
+            this.Solubility.DataPropertyName = "Solubility";
+            this.Solubility.HeaderText = "Solubility";
+            this.Solubility.Name = "Solubility";
+            this.Solubility.ReadOnly = true;
+            // 
+            // Density
+            // 
+            this.Density.DataPropertyName = "Density";
+            this.Density.HeaderText = "Density";
+            this.Density.Name = "Density";
+            this.Density.ReadOnly = true;
             // 
             // FrmInfoInput
             // 
@@ -552,6 +609,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.propertiesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -593,21 +656,30 @@
         private ToxicDBDataSet toxicDBDataSet;
         private System.Windows.Forms.BindingSource infoBindingSource;
         private ToxicDBDataSetTableAdapters.InfoTableAdapter infoTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn casIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource propertiesBindingSource;
         private ToxicDBDataSetTableAdapters.PropertiesTableAdapter propertiesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChemicalName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChineseName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TraditionalName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RtecsId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Element;
-        private System.Windows.Forms.DataGridViewTextBoxColumn State;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Odor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RelativeMolecular;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Solubility;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Density;
         private System.Windows.Forms.Button btnInputClose;
         private System.Windows.Forms.Button btnSave;
+        private ToxicDBDataSet1 toxicDBDataSet1;
+        private System.Windows.Forms.BindingSource infoBindingSource1;
+        private ToxicDBDataSet1TableAdapters.InfoTableAdapter infoTableAdapter1;
+        private ToxicDBDataSet2 toxicDBDataSet2;
+        private System.Windows.Forms.BindingSource infoBindingSource2;
+        private ToxicDBDataSet2TableAdapters.InfoTableAdapter infoTableAdapter2;
+        private ToxicDBDataSet3 toxicDBDataSet3;
+        private System.Windows.Forms.BindingSource infoBindingSource3;
+        private ToxicDBDataSet3TableAdapters.InfoTableAdapter infoTableAdapter3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn casIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChemicalName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChineseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TraditionName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RtecsId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Element;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StateInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Odor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RelativeMolecularMass;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Solubility;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Density;
     }
 }

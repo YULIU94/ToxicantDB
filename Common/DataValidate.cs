@@ -42,5 +42,17 @@ namespace Common
             Regex objReg = new Regex(@"^(\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$");
             return objReg.IsMatch(txt);
         }
+        /// <summary>
+        /// 验证非负浮点数
+        /// </summary>
+        /// <param name="txt"></param>
+        /// <returns></returns>
+        public static bool IsNonNegativeFloat(string txt)
+        {
+            Regex objReg = new Regex(@"^[1-9]d*.d*|0.d*[1-9]d*|0?.0+|0$");
+            return objReg.IsMatch(txt);
+        }
+
+        
     }
 }

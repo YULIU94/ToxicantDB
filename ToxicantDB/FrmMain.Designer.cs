@@ -164,7 +164,7 @@
             this.btnQueryToxic.Location = new System.Drawing.Point(129, 250);
             this.btnQueryToxic.Name = "btnQueryToxic";
             this.btnQueryToxic.Size = new System.Drawing.Size(94, 41);
-            this.btnQueryToxic.TabIndex = 2;
+            this.btnQueryToxic.TabIndex = 4;
             this.btnQueryToxic.Text = "毒性查询";
             this.btnQueryToxic.UseVisualStyleBackColor = true;
             // 
@@ -173,7 +173,7 @@
             this.btnUserManagement.Location = new System.Drawing.Point(129, 388);
             this.btnUserManagement.Name = "btnUserManagement";
             this.btnUserManagement.Size = new System.Drawing.Size(94, 41);
-            this.btnUserManagement.TabIndex = 5;
+            this.btnUserManagement.TabIndex = 7;
             this.btnUserManagement.Text = "用户管理";
             this.btnUserManagement.UseVisualStyleBackColor = true;
             // 
@@ -182,7 +182,7 @@
             this.btnQuit.Location = new System.Drawing.Point(129, 448);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(94, 41);
-            this.btnQuit.TabIndex = 7;
+            this.btnQuit.TabIndex = 9;
             this.btnQuit.Text = "退出系统";
             this.btnQuit.UseVisualStyleBackColor = true;
             // 
@@ -191,7 +191,7 @@
             this.btnPwdModification.Location = new System.Drawing.Point(16, 448);
             this.btnPwdModification.Name = "btnPwdModification";
             this.btnPwdModification.Size = new System.Drawing.Size(94, 41);
-            this.btnPwdModification.TabIndex = 6;
+            this.btnPwdModification.TabIndex = 8;
             this.btnPwdModification.Text = "密码修改";
             this.btnPwdModification.UseVisualStyleBackColor = true;
             // 
@@ -200,7 +200,7 @@
             this.btnInfoMaintenance.Location = new System.Drawing.Point(16, 388);
             this.btnInfoMaintenance.Name = "btnInfoMaintenance";
             this.btnInfoMaintenance.Size = new System.Drawing.Size(94, 41);
-            this.btnInfoMaintenance.TabIndex = 4;
+            this.btnInfoMaintenance.TabIndex = 6;
             this.btnInfoMaintenance.Text = "信息维护";
             this.btnInfoMaintenance.UseVisualStyleBackColor = true;
             // 
@@ -209,7 +209,7 @@
             this.btnQueryAid.Location = new System.Drawing.Point(16, 310);
             this.btnQueryAid.Name = "btnQueryAid";
             this.btnQueryAid.Size = new System.Drawing.Size(94, 41);
-            this.btnQueryAid.TabIndex = 3;
+            this.btnQueryAid.TabIndex = 5;
             this.btnQueryAid.Text = "急救查询";
             this.btnQueryAid.UseVisualStyleBackColor = true;
             // 
@@ -218,7 +218,7 @@
             this.btnQueryProperty.Location = new System.Drawing.Point(16, 250);
             this.btnQueryProperty.Name = "btnQueryProperty";
             this.btnQueryProperty.Size = new System.Drawing.Size(94, 41);
-            this.btnQueryProperty.TabIndex = 1;
+            this.btnQueryProperty.TabIndex = 3;
             this.btnQueryProperty.Text = "理化查询";
             this.btnQueryProperty.UseVisualStyleBackColor = true;
             // 
@@ -227,7 +227,7 @@
             this.btnAidInput.Location = new System.Drawing.Point(16, 176);
             this.btnAidInput.Name = "btnAidInput";
             this.btnAidInput.Size = new System.Drawing.Size(94, 41);
-            this.btnAidInput.TabIndex = 0;
+            this.btnAidInput.TabIndex = 2;
             this.btnAidInput.Text = "急救信息录入";
             this.btnAidInput.UseVisualStyleBackColor = true;
             this.btnAidInput.Click += new System.EventHandler(this.btnInput_Click_1);
@@ -237,7 +237,7 @@
             this.btnDetailInput.Location = new System.Drawing.Point(129, 118);
             this.btnDetailInput.Name = "btnDetailInput";
             this.btnDetailInput.Size = new System.Drawing.Size(94, 41);
-            this.btnDetailInput.TabIndex = 0;
+            this.btnDetailInput.TabIndex = 1;
             this.btnDetailInput.Text = "详细信息录入";
             this.btnDetailInput.UseVisualStyleBackColor = true;
             this.btnDetailInput.Click += new System.EventHandler(this.btnDetailInput_Click);

@@ -47,6 +47,10 @@
     <Compile Include="ToxicManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{767c5ebd-2f1c-4084-a496-72d7ff05480c}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{3bed176c-01da-45f9-8706-664bc584e48f}</Project>
       <Name>DAL</Name>

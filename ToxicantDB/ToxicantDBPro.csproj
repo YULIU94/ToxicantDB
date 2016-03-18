@@ -75,6 +75,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ToxicDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ToxicDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToxicDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ToxicDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToxicDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ToxicDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToxicDBDataSet3.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmAdminLogin.resx">
       <DependentUpon>FrmAdminLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +131,39 @@
     </None>
     <None Include="ToxicDBDataSet.xss">
       <DependentUpon>ToxicDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ToxicDBDataSet1.xsc">
+      <DependentUpon>ToxicDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ToxicDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToxicDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ToxicDBDataSet1.xss">
+      <DependentUpon>ToxicDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ToxicDBDataSet2.xsc">
+      <DependentUpon>ToxicDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ToxicDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToxicDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ToxicDBDataSet2.xss">
+      <DependentUpon>ToxicDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ToxicDBDataSet3.xsc">
+      <DependentUpon>ToxicDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ToxicDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToxicDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ToxicDBDataSet3.xss">
+      <DependentUpon>ToxicDBDataSet3.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

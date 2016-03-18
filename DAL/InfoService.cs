@@ -48,5 +48,164 @@ namespace DAL
 
         #endregion
 
+        //获取全部的毒性等级分类
+        public List<Info> GetAllToxicDegree()
+        {
+            string sql = "select ToxicDegree, ToxicId from Toxic";
+            List<Info> list = new List<Info>();
+            SqlDataReader objReader = SQLHelper.GetReader(sql);
+            //循环读取并封装对象
+            while (objReader.Read())
+            {
+                list.Add(new Info()
+                {
+                    ToxicDegree = Convert.ToString(objReader["ToxicDegree"]),
+                    CasId = Convert.ToString(objReader["ToxicId"])
+                });
+            }
+            objReader.Close();
+            return list;
+        }
+
+        #region 执行查询
+        public List<Info> GetInfos(string casId, string chemicalName, string chineseName, string rtecsId, string traditionName)
+        {
+            //定义参数集合
+            List<SqlParameter> paramList = new List<SqlParameter>();
+            //定义查询SQL语句
+            string sql = "select CasId, ChemicalName, ChineseName, TraditionName, RtecsId, Element, StateInfo, Odor, Color, RelativeMolecularMass, Solubility, Density, Ld50, ToxicDetail, HealthHarzard, EnvironmentHarzard, AidSkin, AidEye, AidInhalation, AidIngestion, ToxicDegree from Info ";
+            sql += "where 1=1";
+            //根据条件添加查询参数(根据输入的参数)
+            if (casId != null && casId.Length > 0)
+            {
+                sql += " and CasId=@CasId ";
+                paramList.Add(new SqlParameter("@CasId", casId));
+            }
+            else if (rtecsId != null && rtecsId.Length > 0)
+            {
+                sql += " and RtecsId=@RtecsId ";
+                paramList.Add(new SqlParameter("@RtecsId", rtecsId));
+            }
+            else
+            {
+                if (chemicalName != null && chemicalName.Length > 0)
+                {
+                    sql += "and ChemicalName like '%'+@ChemicalName+'%'";
+                    paramList.Add(new SqlParameter("@ChemicalName", chemicalName));
+                }
+                if (chineseName != null && chineseName.Length > 0)
+                {
+                    sql += "and ChineseName like '%'+@ChineseName+'%'";
+                    paramList.Add(new SqlParameter("@ChineseName", chineseName));
+                }
+                if (traditionName != null && traditionName.Length > 0)
+                {
+                    sql += "and TraditionName like '%'+@TraditionName+'%'";
+                    paramList.Add(new SqlParameter("@TraditionName", traditionName));
+                }
+            }
+
+            //执行查询
+            SqlDataReader objReader = SQLHelper.GetReader(sql, paramList.ToArray());
+            List<Info> InfoList = new List<Info>();
+            while (objReader.Read())
+            {
+                InfoList.Add( new Info()
+                {
+                    CasId = Convert.ToString(objReader["CasId"]),
+                    ChemicalName = Convert.ToString(objReader["ChemicalName"]),
+                    ChineseName = Convert.ToString(objReader["ChineseName"]),
+                    TraditionName = Convert.ToString(objReader["TraditionName"]),
+                    RtecsId = Convert.ToString(objReader["RtecsId"]),
+                    Element = Convert.ToString(objReader["Element"]),
+                    StateInfo = Convert.ToString(objReader["StateInfo"]),
+                    Odor = Convert.ToString(objReader["Odor"]),
+                    Color = Convert.ToString(objReader["Color"]),
+                    RelativeMolecularMass = Convert.ToDouble(objReader["RelativeMolecularMass"]),
+                    Solubility = Convert.ToDouble(objReader["Solubility"]),
+                    Density = Convert.ToDouble(objReader["Density"]),
+                    Ld50 = Convert.ToString(objReader["Ld50"]),
+                    ToxicDetail = Convert.ToString(objReader["ToxicDetail"]),
+                    HealthHarzard = Convert.ToString(objReader["HealthHarzard"]),
+                    EnvironmentHarzard = Convert.ToString(objReader["EnvironmentHarzard"]),
+                    AidSkin = Convert.ToString(objReader["AidSkin"]),
+                    AidEye = Convert.ToString(objReader["AidEye"]),
+                    AidInhalation = Convert.ToString(objReader["AidInhalation"]),
+                    AidIngestion = Convert.ToString(objReader["AidIngestion"]),
+                    ToxicDegree = Convert.ToString(objReader["ToxicDegree"])
+                });
+            }
+            objReader.Close();
+            return InfoList;
+        }
+
+        #endregion
+
+
+        public Info GetInfoByCasId(string casId)
+        {
+            string sql = "select CasId, ChemicalName, ChineseName, TraditionName, RtecsId, Element, StateInfo, Odor, Color, RelativeMolecularMass, Solubility, Density, Ld50, ToxicDetail, HealthHarzard, EnvironmentHarzard, AidSkin, AidEye, AidInhalation, AidIngestion, ToxicDegree from Info ";
+            sql += " where CasId=@CasId ";
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@CasId",casId)
+            };
+            SqlDataReader objReader = SQLHelper.GetReader(sql, param);
+            Info objInfo = null;
+            if (objReader.Read())
+            {
+                objInfo = new Info()
+                {
+                    CasId = Convert.ToString(objReader["CasId"]),
+                    ChemicalName = Convert.ToString(objReader["ChemicalName"]),
+                    ChineseName = Convert.ToString(objReader["ChineseName"]),
+                    TraditionName = Convert.ToString(objReader["TraditionName"]),
+                    RtecsId = Convert.ToString(objReader["RtecsId"]),
+                    Ld50 = Convert.ToString(objReader["Ld50"]),
+                    ToxicDetail = Convert.ToString(objReader["ToxicDetail"]),
+                    HealthHarzard = Convert.ToString(objReader["HealthHarzard"]),
+                    EnvironmentHarzard = Convert.ToString(objReader["EnvironmentHarzard"]),
+                    AidSkin = Convert.ToString(objReader["AidSkin"]),
+                    AidEye = Convert.ToString(objReader["AidEye"]),
+                    AidInhalation = Convert.ToString(objReader["AidInhalation"]),
+                    AidIngestion = Convert.ToString(objReader["AidIngestion"]),
+                    ToxicDegree = Convert.ToString(objReader["ToxicDegree"])
+                };
+            }
+            objReader.Close();
+            return objInfo;
+        }
+
+        public int EditInfo(Info objInfo)
+        {
+            //封装参数
+            SqlParameter[] param = new SqlParameter[]
+            {
+                //new SqlParameter("@CasId",objInfo.CasId),
+                //new SqlParameter("@ChemicalName",objInfo.ChemicalName),
+                //new SqlParameter("@ChineseName",objInfo.ChineseName),
+                //new SqlParameter("@TraditionName",objInfo.TraditionName),
+                //new SqlParameter("@RtecsId",objInfo.RtecsId),
+                //new SqlParameter("@Element",objInfo.Element),
+                //new SqlParameter("@StateInfo",objInfo.StateInfo),
+                //new SqlParameter("@Odor",objInfo.Odor),
+                //new SqlParameter("@Color",objInfo.Color),
+                //new SqlParameter("@RelativeMolecularMass",objInfo.RelativeMolecularMass),
+                //new SqlParameter("@Solubility",objInfo.Solubility),
+                //new SqlParameter("@Density",objInfo.Density),
+                new SqlParameter("@Ld50",objInfo.Ld50),
+                new SqlParameter("@ToxicDegree",objInfo.ToxicDegree),
+                new SqlParameter("@ToxicDetail",objInfo.ToxicDetail),
+                new SqlParameter("@HealthHarzard",objInfo.HealthHarzard),
+                new SqlParameter("@EnvironmentHarzard",objInfo.EnvironmentHarzard),
+                new SqlParameter("@AidSkin",objInfo.AidSkin),
+                new SqlParameter("@AidEye",objInfo.AidEye),
+                new SqlParameter("@AidInhalation",objInfo.AidInhalation),
+                new SqlParameter("@AidIngestion",objInfo.AidIngestion)
+            };
+            //调用EditBook存储过程
+            return SQLHelper.UpdateByProcedure("usp_EditBook", param);
+        }
+
     }
 }

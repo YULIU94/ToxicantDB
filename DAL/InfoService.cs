@@ -66,6 +66,23 @@ namespace DAL
             objReader.Close();
             return list;
         }
+         //获取全部的毒性等级分类
+        public List<Aid> GetAllAidCategory()
+        {
+            string sql = "select AidCategory from AidCategory";
+            List<Aid> list = new List<Aid>();
+            SqlDataReader objReader = SQLHelper.GetReader(sql);
+            //循环读取并封装对象
+            while (objReader.Read())
+            {
+                list.Add(new Aid()
+                {
+                    AidCategory = Convert.ToString(objReader["AidCategory"])
+                });
+            }
+            objReader.Close();
+            return list;
+        }
 
         #region 执行查询
         public List<Info> GetInfos(string casId, string chemicalName, string chineseName, string rtecsId, string traditionName)
@@ -139,17 +156,55 @@ namespace DAL
             return InfoList;
         }
 
-        #endregion
+        ////根据借阅证号查询读者信息
+        //public Reader GetReaderByReadingCard(string readingCard)
+        //{
+        //    return GetReaderBySQL(" where ReadingCard=@ReadingCard", new SqlParameter[] { new SqlParameter("@ReadingCard", readingCard) });
+        //}
+        ////根据身份证号查询读者信息
+        //public Reader GetReaderByIDCard(string IDCard)
+        //{
+        //    return GetReaderBySQL(" where IDCard=@IDCard ", new SqlParameter[] { new SqlParameter("@IDCard", IDCard) });
+        //}
 
+        ////复用方法
+        //private Reader GetReaderBySQL(string whereSql, SqlParameter[] param)
+        //{
+        //    string sql = "select ReaderId, ReadingCard, ReaderName, Gender, IDCard, ReaderAddress, PostCode, PhoneNumber, Readers.RoleId, ReaderImage, StatusId, RoleName from Readers ";
+        //    sql += " inner join ReaderRoles on ReaderRoles.RoleId=Readers.RoleId ";
+        //    sql += whereSql;
 
-        public Info GetInfoByCasId(string casId)
+        //    //执行查询
+        //    SqlDataReader objReader = SQLHelper.GetReader(sql, param);
+        //    Reader reader = null;
+        //    if (objReader.Read())
+        //    {
+        //        reader = new Reader()
+        //        {
+        //            ReadingCard = objReader["ReadingCard"].ToString(),
+        //            ReaderName = objReader["ReaderName"].ToString(),
+        //            RoleId = Convert.ToInt32(objReader["RoleId"]),
+        //            RoleName = objReader["RoleName"].ToString(),
+        //            ReaderImage = objReader["ReaderImage"] is DBNull ? "" : objReader["ReaderImage"].ToString(),
+        //            ReaderId = Convert.ToInt32(objReader["ReaderId"]),
+        //            StatusId = Convert.ToInt32(objReader["StatusId"]),
+        //            PhoneNumber = objReader["PhoneNumber"].ToString(),
+        //            ReaderAddress = objReader["ReaderAddress"].ToString(),
+        //            PostCode = objReader["PostCode"].ToString(),
+        //            Gender = objReader["Gender"].ToString()
+        //        };
+        //    }
+        //    objReader.Close();
+        //    return reader;
+        //}
+
+        //复用方法
+        private Info GetInfoBySQL(string whereSql, SqlParameter[] param)
         {
             string sql = "select CasId, ChemicalName, ChineseName, TraditionName, RtecsId, Element, StateInfo, Odor, Color, RelativeMolecularMass, Solubility, Density, Ld50, ToxicDetail, HealthHarzard, EnvironmentHarzard, AidSkin, AidEye, AidInhalation, AidIngestion, ToxicDegree from Info ";
-            sql += " where CasId=@CasId ";
-            SqlParameter[] param = new SqlParameter[]
-            {
-                new SqlParameter("@CasId",casId)
-            };
+            sql += whereSql;
+
+            //执行查询
             SqlDataReader objReader = SQLHelper.GetReader(sql, param);
             Info objInfo = null;
             if (objReader.Read())
@@ -175,13 +230,41 @@ namespace DAL
             objReader.Close();
             return objInfo;
         }
+        //五种查询方法
+        public Info GetInfoByCasId(string casId)
+        {
+            return GetInfoBySQL(" where CasId=@CasId", new SqlParameter[] { new SqlParameter("@CasId", casId) });
+        }
+        public Info GetInfoByChemicalName(string chemicalName)
+        {
+            return GetInfoBySQL(" where ChemicalName like '%'+@ChemicalName+'%' ", new SqlParameter[] { new SqlParameter("@ChemicalName", chemicalName) });
+        }
+        public Info GetInfoByChineseName(string chineseName)
+        {
+            return GetInfoBySQL(" where ChineseName like '%'+@ChineseName+'%' ", new SqlParameter[] { new SqlParameter("@ChineseName", chineseName) });
+        }
+        public Info GetInfoByRtecsId(string rtecsId)
+        {
+            return GetInfoBySQL(" where RtecsId = @RtecsId ", new SqlParameter[] { new SqlParameter("@RtecsId", rtecsId) });
+        }
+        public Info GetInfoByTraditionName(string traditionName)
+        {
+            return GetInfoBySQL(" where TraditionName like '%'+@TraditionName+'%' ", new SqlParameter[] { new SqlParameter("@TraditionName", traditionName) });
+        }
+        #endregion
 
+
+        
+
+        //修改详细信息(文本)
         public int EditInfo(Info objInfo)
         {
+            string sql = " update Info set ToxicDetail=@ToxicDetail, HealthHarzard=@HealthHarzard, EnvironmentHarzard=@EnvironmentHarzard, AidSkin=@AidSkin, AidEye=@AidEye, AidInhalation=@AidInhalation, AidIngestion=@AidIngestion  where CasId = @CasId ";
             //封装参数
             SqlParameter[] param = new SqlParameter[]
             {
-                //new SqlParameter("@CasId",objInfo.CasId),
+
+                new SqlParameter("@CasId",objInfo.CasId),
                 //new SqlParameter("@ChemicalName",objInfo.ChemicalName),
                 //new SqlParameter("@ChineseName",objInfo.ChineseName),
                 //new SqlParameter("@TraditionName",objInfo.TraditionName),
@@ -193,8 +276,8 @@ namespace DAL
                 //new SqlParameter("@RelativeMolecularMass",objInfo.RelativeMolecularMass),
                 //new SqlParameter("@Solubility",objInfo.Solubility),
                 //new SqlParameter("@Density",objInfo.Density),
-                new SqlParameter("@Ld50",objInfo.Ld50),
-                new SqlParameter("@ToxicDegree",objInfo.ToxicDegree),
+                //new SqlParameter("@Ld50",objInfo.Ld50),
+                //new SqlParameter("@ToxicDegree",objInfo.ToxicDegree),
                 new SqlParameter("@ToxicDetail",objInfo.ToxicDetail),
                 new SqlParameter("@HealthHarzard",objInfo.HealthHarzard),
                 new SqlParameter("@EnvironmentHarzard",objInfo.EnvironmentHarzard),
@@ -204,7 +287,23 @@ namespace DAL
                 new SqlParameter("@AidIngestion",objInfo.AidIngestion)
             };
             //调用EditBook存储过程
-            return SQLHelper.UpdateByProcedure("usp_EditBook", param);
+            //return SQLHelper.UpdateByProcedure("usp_EditBook", param);
+            return SQLHelper.Update(sql, param);
+        }
+
+        //修改详细信息（其他）
+        public int EditOtherInfo(Info objInfo)
+        {
+            string sql = " update Info set Ld50=@Ld50, ToxicDegree=@ToxicDegree where CasId=@CasId ";
+            //封装参数
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@CasId",objInfo.CasId),
+                new SqlParameter("@Ld50",objInfo.Ld50),
+                new SqlParameter("@ToxicDegree",objInfo.ToxicDegree)
+            };
+            //调用Update方法
+            return SQLHelper.Update(sql, param);
         }
 
     }

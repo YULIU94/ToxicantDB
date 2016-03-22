@@ -115,13 +115,9 @@ namespace ToxicantDB
                 return;
             }
 
-
-
-
             #endregion
 
             //封装对象
-            
 
             Info objInfo = new Info()
             {
@@ -136,7 +132,7 @@ namespace ToxicantDB
                 Color = this.txtColor.Text.Trim(),
                 RelativeMolecularMass = Convert.ToDouble( this.txtRelativeMolecularMass.Text.Trim()),
                 Solubility = Convert.ToDouble( this.txtSolubility.Text.Trim()),
-                Density = Convert.ToDouble( this.txtDensity.Text.Trim()),
+                Density = Convert.ToDouble( this.txtDensity.Text.Trim())
             };
 
             //调用后台添加信息对象
@@ -148,17 +144,14 @@ namespace ToxicantDB
                 this.dgvInfoList.DataSource = null;
                 this.dgvInfoList.DataSource = this.InfoList;
 
-                foreach (Control item in this.gbInputInfo.Controls)
+                foreach (Control item in this.Controls)
                 {
                     if (item is TextBox)
                         item.Text = "";
                 }
-                foreach (Control item in this.gbInputProperty.Controls)
-                {
-                    if (item is TextBox)
-                        item.Text = "";
-                }
-                
+                this.txtRelativeMolecularMass.Text = "0";
+                this.txtSolubility.Text = "0";
+                this.txtDensity.Text = "0";
             }
             catch(Exception ex)
             {

@@ -26,11 +26,31 @@ namespace BLL
         {
             return objInfoService.GetAllToxicDegree();
         }
-
-        //根据CAS ID查询
+         //获取全部的毒性等级分类
+        public List<Aid> GetAllAidCategory()
+        {
+            return objInfoService.GetAllAidCategory();
+        }
+        //查询方法(五种)
         public Info GetInfoByCasId(string casId)
         {
             return objInfoService.GetInfoByCasId(casId);
+        }
+        public Info GetInfoByChemicalName(string chemicalName)
+        {
+            return objInfoService.GetInfoByChemicalName(chemicalName);
+        }
+         public Info GetInfoByChineseName(string chineseName)
+        {
+            return objInfoService.GetInfoByChineseName(chineseName);
+        }
+        public Info GetInfoByRtecsId(string rtecsId)
+        {
+             return objInfoService.GetInfoByRtecsId(rtecsId);
+        }
+        public Info GetInfoByTraditionName(string traditionName)
+        {
+            return objInfoService.GetInfoByTraditionName(traditionName);
         }
 
         //获取信息对象
@@ -38,6 +58,19 @@ namespace BLL
         {
             return objInfoService.GetInfos(casId, chemicalName, chineseName, rtecsId, traditionName);
         }
+
+        //修改详细信息(文本)
+        public int EditInfo(Info objInfo)
+        {
+            return objInfoService.EditInfo(objInfo);
+        }
+
+        //修改详细信息(文本)
+        public int EditOtherInfo(Info objInfo)
+        {
+            return objInfoService.EditOtherInfo(objInfo);
+        }
+
 
         #region 数据验证方法
         public bool CasIdIsExisted(string casId)
@@ -51,17 +84,11 @@ namespace BLL
 
         public bool IsNonNegativeFloat(string str)
         {
-            if (DataValidate.IsNonNegativeFloat(str))
-                return true;
-            else
-                return false;
+            return (DataValidate.IsNonNegativeFloat(str));
         }
         #endregion
 
-        public int EditInfo(Info objInfo)
-        {
-            return objInfoService.EditInfo(objInfo);
-        }
+
 
 
 

@@ -42,25 +42,25 @@
             this.txtCasId = new System.Windows.Forms.TextBox();
             this.lblCasId = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtxtBox = new System.Windows.Forms.RichTextBox();
             this.gbRichText = new System.Windows.Forms.GroupBox();
             this.btnRichTextSave = new System.Windows.Forms.Button();
             this.cboRichTextCategory = new System.Windows.Forms.ComboBox();
             this.lblRichTextCategory = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbOtherInfo = new System.Windows.Forms.GroupBox();
             this.btnOtherInfoSave = new System.Windows.Forms.Button();
             this.cboToxicDegree = new System.Windows.Forms.ComboBox();
             this.lblToxicDegree = new System.Windows.Forms.Label();
             this.txtLd50 = new System.Windows.Forms.TextBox();
             this.lblLd50 = new System.Windows.Forms.Label();
             this.dgvQueryResult = new System.Windows.Forms.DataGridView();
+            this.infoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.toxicDBDataSet4 = new ToxicantDB.ToxicDBDataSet4();
             this.gbQueryResult = new System.Windows.Forms.GroupBox();
             this.toxicDBDataSet3 = new ToxicantDB.ToxicDBDataSet3();
             this.toxicDBDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.infoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.infoTableAdapter = new ToxicantDB.ToxicDBDataSet3TableAdapters.InfoTableAdapter();
-            this.toxicDBDataSet4 = new ToxicantDB.ToxicDBDataSet4();
-            this.infoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.infoTableAdapter1 = new ToxicantDB.ToxicDBDataSet4TableAdapters.InfoTableAdapter();
             this.CasId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChemicalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,13 +78,13 @@
             this.AidIngestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbToxicQuery.SuspendLayout();
             this.gbRichText.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbOtherInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQueryResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbToxicQuery
@@ -213,16 +213,16 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // richTextBox1
+            // rtxtBox
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rtxtBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(7, 61);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(490, 445);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.rtxtBox.Location = new System.Drawing.Point(7, 61);
+            this.rtxtBox.Name = "rtxtBox";
+            this.rtxtBox.Size = new System.Drawing.Size(490, 445);
+            this.rtxtBox.TabIndex = 0;
+            this.rtxtBox.Text = "";
             // 
             // gbRichText
             // 
@@ -231,7 +231,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbRichText.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gbRichText.Controls.Add(this.btnRichTextSave);
-            this.gbRichText.Controls.Add(this.richTextBox1);
+            this.gbRichText.Controls.Add(this.rtxtBox);
             this.gbRichText.Controls.Add(this.cboRichTextCategory);
             this.gbRichText.Controls.Add(this.lblRichTextCategory);
             this.gbRichText.Location = new System.Drawing.Point(500, 157);
@@ -244,12 +244,13 @@
             // btnRichTextSave
             // 
             this.btnRichTextSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRichTextSave.Location = new System.Drawing.Point(410, 20);
+            this.btnRichTextSave.Location = new System.Drawing.Point(383, 17);
             this.btnRichTextSave.Name = "btnRichTextSave";
-            this.btnRichTextSave.Size = new System.Drawing.Size(72, 28);
+            this.btnRichTextSave.Size = new System.Drawing.Size(86, 33);
             this.btnRichTextSave.TabIndex = 1;
             this.btnRichTextSave.Text = "保存";
             this.btnRichTextSave.UseVisualStyleBackColor = true;
+            this.btnRichTextSave.Click += new System.EventHandler(this.btnRichTextSave_Click);
             // 
             // cboRichTextCategory
             // 
@@ -268,29 +269,29 @@
             this.lblRichTextCategory.TabIndex = 0;
             this.lblRichTextCategory.Text = "毒物资料分类 :";
             // 
-            // groupBox1
+            // gbOtherInfo
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gbOtherInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox1.Controls.Add(this.btnOtherInfoSave);
-            this.groupBox1.Controls.Add(this.cboToxicDegree);
-            this.groupBox1.Controls.Add(this.lblToxicDegree);
-            this.groupBox1.Controls.Add(this.txtLd50);
-            this.groupBox1.Controls.Add(this.lblLd50);
-            this.groupBox1.Location = new System.Drawing.Point(27, 505);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(453, 158);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "其他信息";
+            this.gbOtherInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.gbOtherInfo.Controls.Add(this.btnOtherInfoSave);
+            this.gbOtherInfo.Controls.Add(this.cboToxicDegree);
+            this.gbOtherInfo.Controls.Add(this.lblToxicDegree);
+            this.gbOtherInfo.Controls.Add(this.txtLd50);
+            this.gbOtherInfo.Controls.Add(this.lblLd50);
+            this.gbOtherInfo.Location = new System.Drawing.Point(27, 505);
+            this.gbOtherInfo.Name = "gbOtherInfo";
+            this.gbOtherInfo.Size = new System.Drawing.Size(453, 158);
+            this.gbOtherInfo.TabIndex = 6;
+            this.gbOtherInfo.TabStop = false;
+            this.gbOtherInfo.Text = "其他信息";
             // 
             // btnOtherInfoSave
             // 
             this.btnOtherInfoSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOtherInfoSave.Location = new System.Drawing.Point(367, 20);
+            this.btnOtherInfoSave.Location = new System.Drawing.Point(329, 88);
             this.btnOtherInfoSave.Name = "btnOtherInfoSave";
-            this.btnOtherInfoSave.Size = new System.Drawing.Size(72, 28);
+            this.btnOtherInfoSave.Size = new System.Drawing.Size(86, 33);
             this.btnOtherInfoSave.TabIndex = 1;
             this.btnOtherInfoSave.Text = "保存";
             this.btnOtherInfoSave.UseVisualStyleBackColor = true;
@@ -360,6 +361,16 @@
             this.dgvQueryResult.Size = new System.Drawing.Size(441, 307);
             this.dgvQueryResult.TabIndex = 7;
             // 
+            // infoBindingSource1
+            // 
+            this.infoBindingSource1.DataMember = "Info";
+            this.infoBindingSource1.DataSource = this.toxicDBDataSet4;
+            // 
+            // toxicDBDataSet4
+            // 
+            this.toxicDBDataSet4.DataSetName = "ToxicDBDataSet4";
+            this.toxicDBDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gbQueryResult
             // 
             this.gbQueryResult.Location = new System.Drawing.Point(27, 157);
@@ -388,16 +399,6 @@
             // 
             this.infoTableAdapter.ClearBeforeFill = true;
             // 
-            // toxicDBDataSet4
-            // 
-            this.toxicDBDataSet4.DataSetName = "ToxicDBDataSet4";
-            this.toxicDBDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // infoBindingSource1
-            // 
-            this.infoBindingSource1.DataMember = "Info";
-            this.infoBindingSource1.DataSource = this.toxicDBDataSet4;
-            // 
             // infoTableAdapter1
             // 
             this.infoTableAdapter1.ClearBeforeFill = true;
@@ -405,35 +406,35 @@
             // CasId
             // 
             this.CasId.DataPropertyName = "CasId";
-            this.CasId.HeaderText = "CasId";
+            this.CasId.HeaderText = "CasId编号";
             this.CasId.Name = "CasId";
             this.CasId.ReadOnly = true;
             // 
             // ChemicalName
             // 
             this.ChemicalName.DataPropertyName = "ChemicalName";
-            this.ChemicalName.HeaderText = "ChemicalName";
+            this.ChemicalName.HeaderText = "化学名";
             this.ChemicalName.Name = "ChemicalName";
             this.ChemicalName.ReadOnly = true;
             // 
             // ChineseName
             // 
             this.ChineseName.DataPropertyName = "ChineseName";
-            this.ChineseName.HeaderText = "ChineseName";
+            this.ChineseName.HeaderText = "中文名";
             this.ChineseName.Name = "ChineseName";
             this.ChineseName.ReadOnly = true;
             // 
             // TraditionName
             // 
             this.TraditionName.DataPropertyName = "TraditionName";
-            this.TraditionName.HeaderText = "TraditionName";
+            this.TraditionName.HeaderText = "俗名";
             this.TraditionName.Name = "TraditionName";
             this.TraditionName.ReadOnly = true;
             // 
             // RtecsId
             // 
             this.RtecsId.DataPropertyName = "RtecsId";
-            this.RtecsId.HeaderText = "RtecsId";
+            this.RtecsId.HeaderText = "RtecsId编号";
             this.RtecsId.Name = "RtecsId";
             this.RtecsId.ReadOnly = true;
             // 
@@ -447,56 +448,56 @@
             // ToxicDegree
             // 
             this.ToxicDegree.DataPropertyName = "ToxicDegree";
-            this.ToxicDegree.HeaderText = "ToxicDegree";
+            this.ToxicDegree.HeaderText = "毒性等级";
             this.ToxicDegree.Name = "ToxicDegree";
             this.ToxicDegree.ReadOnly = true;
             // 
             // ToxicDetail
             // 
             this.ToxicDetail.DataPropertyName = "ToxicDetail";
-            this.ToxicDetail.HeaderText = "ToxicDetail";
+            this.ToxicDetail.HeaderText = "毒性信息";
             this.ToxicDetail.Name = "ToxicDetail";
             this.ToxicDetail.ReadOnly = true;
             // 
             // HealthHarzard
             // 
             this.HealthHarzard.DataPropertyName = "HealthHarzard";
-            this.HealthHarzard.HeaderText = "HealthHarzard";
+            this.HealthHarzard.HeaderText = "健康危害";
             this.HealthHarzard.Name = "HealthHarzard";
             this.HealthHarzard.ReadOnly = true;
             // 
             // EnvironmentHarzard
             // 
             this.EnvironmentHarzard.DataPropertyName = "EnvironmentHarzard";
-            this.EnvironmentHarzard.HeaderText = "EnvironmentHarzard";
+            this.EnvironmentHarzard.HeaderText = "环境危害";
             this.EnvironmentHarzard.Name = "EnvironmentHarzard";
             this.EnvironmentHarzard.ReadOnly = true;
             // 
             // AidSkin
             // 
             this.AidSkin.DataPropertyName = "AidSkin";
-            this.AidSkin.HeaderText = "AidSkin";
+            this.AidSkin.HeaderText = "皮肤接触急救";
             this.AidSkin.Name = "AidSkin";
             this.AidSkin.ReadOnly = true;
             // 
             // AidEye
             // 
             this.AidEye.DataPropertyName = "AidEye";
-            this.AidEye.HeaderText = "AidEye";
+            this.AidEye.HeaderText = "眼部接触急救";
             this.AidEye.Name = "AidEye";
             this.AidEye.ReadOnly = true;
             // 
             // AidInhalation
             // 
             this.AidInhalation.DataPropertyName = "AidInhalation";
-            this.AidInhalation.HeaderText = "AidInhalation";
+            this.AidInhalation.HeaderText = "毒物吸入急救";
             this.AidInhalation.Name = "AidInhalation";
             this.AidInhalation.ReadOnly = true;
             // 
             // AidIngestion
             // 
             this.AidIngestion.DataPropertyName = "AidIngestion";
-            this.AidIngestion.HeaderText = "AidIngestion";
+            this.AidIngestion.HeaderText = "毒物摄入急救";
             this.AidIngestion.Name = "AidIngestion";
             this.AidIngestion.ReadOnly = true;
             // 
@@ -506,7 +507,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 681);
             this.Controls.Add(this.dgvQueryResult);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbOtherInfo);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gbToxicQuery);
             this.Controls.Add(this.gbRichText);
@@ -519,14 +520,14 @@
             this.gbToxicQuery.PerformLayout();
             this.gbRichText.ResumeLayout(false);
             this.gbRichText.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbOtherInfo.ResumeLayout(false);
+            this.gbOtherInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQueryResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -546,12 +547,11 @@
         private System.Windows.Forms.Label lblCasId;
         private System.Windows.Forms.Button btnQuery;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtxtBox;
         private System.Windows.Forms.GroupBox gbRichText;
-        private System.Windows.Forms.Button btnRichTextSave;
         private System.Windows.Forms.ComboBox cboRichTextCategory;
         private System.Windows.Forms.Label lblRichTextCategory;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbOtherInfo;
         private System.Windows.Forms.Button btnOtherInfoSave;
         private System.Windows.Forms.TextBox txtLd50;
         private System.Windows.Forms.Label lblLd50;
@@ -566,6 +566,7 @@
         private ToxicDBDataSet4 toxicDBDataSet4;
         private System.Windows.Forms.BindingSource infoBindingSource1;
         private ToxicDBDataSet4TableAdapters.InfoTableAdapter infoTableAdapter1;
+        private System.Windows.Forms.Button btnRichTextSave;
         private System.Windows.Forms.DataGridViewTextBoxColumn CasId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChemicalName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChineseName;

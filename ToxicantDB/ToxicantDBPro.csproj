@@ -56,6 +56,12 @@
     <Compile Include="FrmInfoInput.Designer.cs">
       <DependentUpon>FrmInfoInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmInfoManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInfoManage.Designer.cs">
+      <DependentUpon>FrmInfoManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,11 +101,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ToxicDBDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ToxicDBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToxicDBDataSet5.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmAdminLogin.resx">
       <DependentUpon>FrmAdminLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInfoInput.resx">
       <DependentUpon>FrmInfoInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInfoManage.resx">
+      <DependentUpon>FrmInfoManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -180,6 +194,17 @@
     </None>
     <None Include="ToxicDBDataSet4.xss">
       <DependentUpon>ToxicDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="ToxicDBDataSet5.xsc">
+      <DependentUpon>ToxicDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="ToxicDBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ToxicDBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ToxicDBDataSet5.xss">
+      <DependentUpon>ToxicDBDataSet5.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

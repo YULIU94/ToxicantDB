@@ -185,6 +185,7 @@
             this.btnQuit.TabIndex = 9;
             this.btnQuit.Text = "退出系统";
             this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // btnPwdModification
             // 
@@ -228,9 +229,9 @@
             this.btnAidInput.Name = "btnAidInput";
             this.btnAidInput.Size = new System.Drawing.Size(94, 41);
             this.btnAidInput.TabIndex = 2;
-            this.btnAidInput.Text = "急救信息录入";
+            this.btnAidInput.Text = "基本信息修改";
             this.btnAidInput.UseVisualStyleBackColor = true;
-            this.btnAidInput.Click += new System.EventHandler(this.btnInput_Click_1);
+            this.btnAidInput.Click += new System.EventHandler(this.btnAidInput_Click);
             // 
             // btnDetailInput
             // 
@@ -285,6 +286,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMain";
             this.Text = "毒物数据库系统";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

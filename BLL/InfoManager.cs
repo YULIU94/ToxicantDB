@@ -71,7 +71,11 @@ namespace BLL
             return objInfoService.EditOtherInfo(objInfo);
         }
 
-
+        //删除信息
+        public int DeleteInfo(string casId)
+        {
+            return objInfoService.DeleteInfo(casId);
+        }
         #region 数据验证方法
         public bool CasIdIsExisted(string casId)
         {

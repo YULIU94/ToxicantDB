@@ -91,5 +91,26 @@ namespace ToxicantDB
             this.lblCurrent.Text = "信息输入";
         }
 
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("确认退出系统", "退出询问", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Cancel)
+            {
+                e.Cancel = true;//取消窗体关闭操作
+            }
+        }
+
+        private void btnAidInput_Click(object sender, EventArgs e)
+        {
+            FrmInfoManage objFrm = new FrmInfoManage(this);//(差异)
+            OpenForm(objFrm);
+            this.lblCurrent.Text = "信息输入";
+        }
+
     }
 }

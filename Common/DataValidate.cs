@@ -49,7 +49,7 @@ namespace Common
         /// <returns></returns>
         public static bool IsNonNegativeFloat(string txt)
         {
-            Regex objReg = new Regex(@"^[1-9]d*.d*|0.d*[1-9]d*|0?.0+|0$");
+            Regex objReg = new Regex(@"^[1-9]d*|[1-9]d*.d*|0.d*[1-9]d*|0?.0+|0$");
             bool is_m = objReg.IsMatch(txt);
             return objReg.IsMatch(txt);
         }

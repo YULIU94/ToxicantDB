@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbToxicQuery = new System.Windows.Forms.GroupBox();
             this.btnQuery = new System.Windows.Forms.Button();
             this.txtChineseName = new System.Windows.Forms.TextBox();
@@ -128,6 +129,7 @@
             this.txtChineseName.Name = "txtChineseName";
             this.txtChineseName.Size = new System.Drawing.Size(122, 21);
             this.txtChineseName.TabIndex = 2;
+            this.txtChineseName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtChineseName_KeyDown);
             // 
             // lblChineseName
             // 
@@ -144,6 +146,7 @@
             this.txtTraditionName.Name = "txtTraditionName";
             this.txtTraditionName.Size = new System.Drawing.Size(122, 21);
             this.txtTraditionName.TabIndex = 4;
+            this.txtTraditionName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTraditionName_KeyDown);
             // 
             // txtChemicalName
             // 
@@ -151,6 +154,7 @@
             this.txtChemicalName.Name = "txtChemicalName";
             this.txtChemicalName.Size = new System.Drawing.Size(122, 21);
             this.txtChemicalName.TabIndex = 1;
+            this.txtChemicalName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtChemicalName_KeyDown);
             // 
             // lblTraditionName
             // 
@@ -176,6 +180,7 @@
             this.txtRtecsId.Name = "txtRtecsId";
             this.txtRtecsId.Size = new System.Drawing.Size(122, 21);
             this.txtRtecsId.TabIndex = 3;
+            this.txtRtecsId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRtecsId_KeyDown);
             // 
             // lblRtecsId
             // 
@@ -192,6 +197,7 @@
             this.txtCasId.Name = "txtCasId";
             this.txtCasId.Size = new System.Drawing.Size(122, 21);
             this.txtCasId.TabIndex = 0;
+            this.txtCasId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCasId_KeyDown);
             // 
             // lblCasId
             // 
@@ -336,6 +342,14 @@
             this.dgvQueryResult.AllowUserToDeleteRows = false;
             this.dgvQueryResult.AutoGenerateColumns = false;
             this.dgvQueryResult.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvQueryResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvQueryResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQueryResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CasId,
@@ -356,6 +370,7 @@
             this.dgvQueryResult.Location = new System.Drawing.Point(33, 177);
             this.dgvQueryResult.Name = "dgvQueryResult";
             this.dgvQueryResult.ReadOnly = true;
+            this.dgvQueryResult.RowHeadersWidth = 46;
             this.dgvQueryResult.RowTemplate.Height = 23;
             this.dgvQueryResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQueryResult.Size = new System.Drawing.Size(441, 307);

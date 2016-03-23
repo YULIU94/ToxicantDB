@@ -50,12 +50,12 @@ namespace ToxicantDB
 
         }
 
-        //鼠标离开时或者按下回车时检测
+        //鼠标离开时或者按下回车时检测CASID是否已经存在
         private void txtCasId_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == 13)//此处调用相同的功能，精简代码
             {
-                txtCasId_KeyDown(null, null);
+                txtCasId_Leave(null, null);
             }
         }
         private void txtCasId_Leave(object sender, EventArgs e)

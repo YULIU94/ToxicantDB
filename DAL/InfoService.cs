@@ -254,7 +254,33 @@ namespace DAL
         #endregion
 
 
-        
+        #region 删除信息
+        public int DeleteInfo(string casId)
+        {
+            string sql = "delete from Info where CasId=@CasId";
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@CasId",casId)
+            };
+            try
+            {
+                return SQLHelper.Update(sql, param);
+            }
+            catch (SqlException ex)//防止外键被引用，多路异常捕获
+            {
+                if (ex.Number == 547)
+                    throw new Exception("当前图书已被其他数据表引用，不能直接删除！");
+                else
+                    throw new Exception("删除图书出现异常：" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        #endregion
 
         //修改详细信息(文本)
         public int EditInfo(Info objInfo)

@@ -114,6 +114,48 @@ namespace ToxicantDB
 
         #endregion
 
+        #region 检索框回车时查询
+
+        private void txtCasId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (this.txtCasId.Text.Trim().Length != 0 && e.KeyValue == 13)
+            {
+                this.btnQuery_Click(null, null);
+            }
+        }
+
+        private void txtChemicalName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (this.txtChemicalName.Text.Trim().Length != 0 && e.KeyValue == 13)
+            {
+                this.btnQuery_Click(null, null);
+            }
+        }
+
+        private void txtChineseName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (this.txtChineseName.Text.Trim().Length != 0 && e.KeyValue == 13)
+            {
+                this.btnQuery_Click(null, null);
+            }
+        }
+
+        private void txtRtecsId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (this.txtRtecsId.Text.Trim().Length != 0 && e.KeyValue == 13)
+            {
+                this.btnQuery_Click(null, null);
+            }
+        }
+
+        private void txtTraditionName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (this.txtTraditionName.Text.Trim().Length != 0 && e.KeyValue == 13)
+            {
+                this.btnQuery_Click(null, null);
+            }
+        }
+        #endregion
 
         #region 同步显示要修改的信息
         private void dgvQueryResult_SelectionChanged(object sender, EventArgs e)
@@ -209,7 +251,6 @@ namespace ToxicantDB
            if(this.rtxtBox.Text.Trim().Length==0)
             {
                 MessageBox.Show("请输入文本信息！", "保存提示");
-
             }
             else
             {
@@ -449,6 +490,7 @@ namespace ToxicantDB
                };
 
         }
+
 
     }
 }

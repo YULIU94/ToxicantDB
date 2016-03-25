@@ -50,21 +50,6 @@ namespace ToxicantDB
 
         }
 
-        private void btnQueryProperty_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnQueryToxic_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUserManagement_Click(object sender, EventArgs e)
-        {
-
-        }
-
         
 
         private void btnPwdModification_Click(object sender, EventArgs e)
@@ -110,6 +95,13 @@ namespace ToxicantDB
             FrmInfoManage objFrm = new FrmInfoManage(this);//(差异)
             OpenForm(objFrm);
             this.lblCurrent.Text = "信息输入";
+        }
+
+        private void btnUserManage_Click(object sender, EventArgs e)
+        {
+            FrmAdminManage objFrm = new FrmAdminManage(this);//(差异)
+            OpenForm(objFrm);
+            this.lblCurrent.Text = "用户管理";
         }
 
     }

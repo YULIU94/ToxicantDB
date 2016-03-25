@@ -19,5 +19,18 @@ namespace BLL
         {
             return objSysAdminService.AdminLogin(objAdmin);
         }
+
+        public SysAdmin GetInfoByAdminId(string adminId)
+        {
+            return objSysAdminService.GetInfoByAdminId(adminId);
+        }
+        public SysAdmin GetInfoByIDCard(string idCard)
+        {
+            return objSysAdminService.GetInfoByIDCard(idCard);
+        }
+        public int EditAdmin(SysAdmin objAdmin)
+        {
+            return objSysAdminService.EditAdmin(objAdmin);
+        }
     }
 }

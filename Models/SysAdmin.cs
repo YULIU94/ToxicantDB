@@ -19,5 +19,15 @@ namespace Models
         public int StatusId { set; get; }
 
         public int RoleId { set; get; }
+
+        public string IdCard { set; get; }
+
+        public string Gender { set; get; }
+
+        public string AdminRole { set; get; }
+
+        public string PhoneNumber { set; get; }
+
+        public string Location { set; get; }
     }
 }

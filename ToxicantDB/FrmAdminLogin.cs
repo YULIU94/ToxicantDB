@@ -57,7 +57,7 @@ namespace ToxicantDB
             SysAdmin objAdmin = new SysAdmin()
             {
                 AdminId = Convert.ToInt32(this.txtAdminId.Text.Trim()),//用户名数据格式暂时为Int，后面可以根据需要修改（改进）
-                LoginPwd = this.txtAdminPwd.Text.Trim()
+                IdCard = this.txtAdminPwd.Text.Trim()
             };
             try
             {

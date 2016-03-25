@@ -37,17 +37,14 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssl_Version = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnQueryToxic = new System.Windows.Forms.Button();
-            this.btnUserManagement = new System.Windows.Forms.Button();
+            this.btnUserManage = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
             this.btnPwdModification = new System.Windows.Forms.Button();
             this.btnInfoMaintenance = new System.Windows.Forms.Button();
-            this.btnQueryAid = new System.Windows.Forms.Button();
-            this.btnQueryProperty = new System.Windows.Forms.Button();
-            this.btnAidInput = new System.Windows.Forms.Button();
+            this.gbFrmMainButtons = new System.Windows.Forms.GroupBox();
             this.btnDetailInput = new System.Windows.Forms.Button();
             this.btnInfoInput = new System.Windows.Forms.Button();
-            this.gbFrmMainButtons = new System.Windows.Forms.GroupBox();
+            this.btnAidInput = new System.Windows.Forms.Button();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.tssl_AdminName = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
@@ -56,6 +53,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.gbFrmMainButtons.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,16 +94,8 @@
             this.splitContainer1.Panel1.Controls.Add(this.lblCurrent);
             this.splitContainer1.Panel1.Controls.Add(this.lblTitle);
             this.splitContainer1.Panel1.Controls.Add(this.statusStrip1);
-            this.splitContainer1.Panel1.Controls.Add(this.btnQueryToxic);
-            this.splitContainer1.Panel1.Controls.Add(this.btnUserManagement);
             this.splitContainer1.Panel1.Controls.Add(this.btnQuit);
             this.splitContainer1.Panel1.Controls.Add(this.btnPwdModification);
-            this.splitContainer1.Panel1.Controls.Add(this.btnInfoMaintenance);
-            this.splitContainer1.Panel1.Controls.Add(this.btnQueryAid);
-            this.splitContainer1.Panel1.Controls.Add(this.btnQueryProperty);
-            this.splitContainer1.Panel1.Controls.Add(this.btnAidInput);
-            this.splitContainer1.Panel1.Controls.Add(this.btnDetailInput);
-            this.splitContainer1.Panel1.Controls.Add(this.btnInfoInput);
             this.splitContainer1.Panel1.Controls.Add(this.gbFrmMainButtons);
             // 
             // splitContainer1.Panel2
@@ -120,8 +110,7 @@
             // 
             // lblCurrent
             // 
-            this.lblCurrent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblCurrent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrent.AutoSize = true;
             this.lblCurrent.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -159,23 +148,15 @@
             this.tssl_Version.Size = new System.Drawing.Size(164, 17);
             this.tssl_Version.Text = "毒物数据库系统 版本号V0.10";
             // 
-            // btnQueryToxic
+            // btnUserManage
             // 
-            this.btnQueryToxic.Location = new System.Drawing.Point(129, 250);
-            this.btnQueryToxic.Name = "btnQueryToxic";
-            this.btnQueryToxic.Size = new System.Drawing.Size(94, 41);
-            this.btnQueryToxic.TabIndex = 4;
-            this.btnQueryToxic.Text = "毒性查询";
-            this.btnQueryToxic.UseVisualStyleBackColor = true;
-            // 
-            // btnUserManagement
-            // 
-            this.btnUserManagement.Location = new System.Drawing.Point(129, 388);
-            this.btnUserManagement.Name = "btnUserManagement";
-            this.btnUserManagement.Size = new System.Drawing.Size(94, 41);
-            this.btnUserManagement.TabIndex = 7;
-            this.btnUserManagement.Text = "用户管理";
-            this.btnUserManagement.UseVisualStyleBackColor = true;
+            this.btnUserManage.Location = new System.Drawing.Point(68, 230);
+            this.btnUserManage.Name = "btnUserManage";
+            this.btnUserManage.Size = new System.Drawing.Size(104, 41);
+            this.btnUserManage.TabIndex = 7;
+            this.btnUserManage.Text = "用户管理";
+            this.btnUserManage.UseVisualStyleBackColor = true;
+            this.btnUserManage.Click += new System.EventHandler(this.btnUserManage_Click);
             // 
             // btnQuit
             // 
@@ -198,68 +179,59 @@
             // 
             // btnInfoMaintenance
             // 
-            this.btnInfoMaintenance.Location = new System.Drawing.Point(16, 388);
+            this.btnInfoMaintenance.Location = new System.Drawing.Point(68, 294);
             this.btnInfoMaintenance.Name = "btnInfoMaintenance";
-            this.btnInfoMaintenance.Size = new System.Drawing.Size(94, 41);
+            this.btnInfoMaintenance.Size = new System.Drawing.Size(104, 41);
             this.btnInfoMaintenance.TabIndex = 6;
             this.btnInfoMaintenance.Text = "信息维护";
             this.btnInfoMaintenance.UseVisualStyleBackColor = true;
             // 
-            // btnQueryAid
-            // 
-            this.btnQueryAid.Location = new System.Drawing.Point(16, 310);
-            this.btnQueryAid.Name = "btnQueryAid";
-            this.btnQueryAid.Size = new System.Drawing.Size(94, 41);
-            this.btnQueryAid.TabIndex = 5;
-            this.btnQueryAid.Text = "急救查询";
-            this.btnQueryAid.UseVisualStyleBackColor = true;
-            // 
-            // btnQueryProperty
-            // 
-            this.btnQueryProperty.Location = new System.Drawing.Point(16, 250);
-            this.btnQueryProperty.Name = "btnQueryProperty";
-            this.btnQueryProperty.Size = new System.Drawing.Size(94, 41);
-            this.btnQueryProperty.TabIndex = 3;
-            this.btnQueryProperty.Text = "理化查询";
-            this.btnQueryProperty.UseVisualStyleBackColor = true;
-            // 
-            // btnAidInput
-            // 
-            this.btnAidInput.Location = new System.Drawing.Point(16, 176);
-            this.btnAidInput.Name = "btnAidInput";
-            this.btnAidInput.Size = new System.Drawing.Size(94, 41);
-            this.btnAidInput.TabIndex = 2;
-            this.btnAidInput.Text = "基本信息修改";
-            this.btnAidInput.UseVisualStyleBackColor = true;
-            this.btnAidInput.Click += new System.EventHandler(this.btnAidInput_Click);
-            // 
-            // btnDetailInput
-            // 
-            this.btnDetailInput.Location = new System.Drawing.Point(129, 118);
-            this.btnDetailInput.Name = "btnDetailInput";
-            this.btnDetailInput.Size = new System.Drawing.Size(94, 41);
-            this.btnDetailInput.TabIndex = 1;
-            this.btnDetailInput.Text = "详细信息录入";
-            this.btnDetailInput.UseVisualStyleBackColor = true;
-            this.btnDetailInput.Click += new System.EventHandler(this.btnDetailInput_Click);
-            // 
-            // btnInfoInput
-            // 
-            this.btnInfoInput.Location = new System.Drawing.Point(16, 118);
-            this.btnInfoInput.Name = "btnInfoInput";
-            this.btnInfoInput.Size = new System.Drawing.Size(94, 41);
-            this.btnInfoInput.TabIndex = 0;
-            this.btnInfoInput.Text = "基本信息录入";
-            this.btnInfoInput.UseVisualStyleBackColor = true;
-            this.btnInfoInput.Click += new System.EventHandler(this.btnInput_Click_1);
-            // 
             // gbFrmMainButtons
             // 
+            this.gbFrmMainButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbFrmMainButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.gbFrmMainButtons.Controls.Add(this.btnDetailInput);
+            this.gbFrmMainButtons.Controls.Add(this.btnInfoInput);
+            this.gbFrmMainButtons.Controls.Add(this.btnAidInput);
+            this.gbFrmMainButtons.Controls.Add(this.btnUserManage);
+            this.gbFrmMainButtons.Controls.Add(this.btnInfoMaintenance);
             this.gbFrmMainButtons.Location = new System.Drawing.Point(0, 87);
             this.gbFrmMainButtons.Name = "gbFrmMainButtons";
             this.gbFrmMainButtons.Size = new System.Drawing.Size(238, 429);
             this.gbFrmMainButtons.TabIndex = 8;
             this.gbFrmMainButtons.TabStop = false;
+            // 
+            // btnDetailInput
+            // 
+            this.btnDetailInput.Location = new System.Drawing.Point(68, 164);
+            this.btnDetailInput.Name = "btnDetailInput";
+            this.btnDetailInput.Size = new System.Drawing.Size(104, 41);
+            this.btnDetailInput.TabIndex = 1;
+            this.btnDetailInput.Text = "详细信息管理";
+            this.btnDetailInput.UseVisualStyleBackColor = true;
+            this.btnDetailInput.Click += new System.EventHandler(this.btnDetailInput_Click);
+            // 
+            // btnInfoInput
+            // 
+            this.btnInfoInput.Location = new System.Drawing.Point(68, 29);
+            this.btnInfoInput.Name = "btnInfoInput";
+            this.btnInfoInput.Size = new System.Drawing.Size(104, 41);
+            this.btnInfoInput.TabIndex = 0;
+            this.btnInfoInput.Text = "基本信息录入";
+            this.btnInfoInput.UseVisualStyleBackColor = true;
+            this.btnInfoInput.Click += new System.EventHandler(this.btnInput_Click_1);
+            // 
+            // btnAidInput
+            // 
+            this.btnAidInput.Location = new System.Drawing.Point(68, 95);
+            this.btnAidInput.Name = "btnAidInput";
+            this.btnAidInput.Size = new System.Drawing.Size(104, 41);
+            this.btnAidInput.TabIndex = 2;
+            this.btnAidInput.Text = "基本信息管理";
+            this.btnAidInput.UseVisualStyleBackColor = true;
+            this.btnAidInput.Click += new System.EventHandler(this.btnAidInput_Click);
             // 
             // statusStrip2
             // 
@@ -298,6 +270,7 @@
             this.splitContainer1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.gbFrmMainButtons.ResumeLayout(false);
             this.statusStrip2.ResumeLayout(false);
             this.statusStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -313,13 +286,10 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnInfoInput;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.Button btnQueryProperty;
-        private System.Windows.Forms.Button btnQueryToxic;
-        private System.Windows.Forms.Button btnUserManagement;
+        private System.Windows.Forms.Button btnUserManage;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Button btnPwdModification;
         private System.Windows.Forms.Button btnInfoMaintenance;
-        private System.Windows.Forms.Button btnQueryAid;
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel tssl_Version;
         private System.Windows.Forms.ToolStripStatusLabel tssl_AdminName;

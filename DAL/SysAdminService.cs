@@ -29,12 +29,12 @@ namespace DAL
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@AdminId",objAdmin.AdminId),
-                new SqlParameter("@LoginPwd",objAdmin.LoginPwd)
+                new SqlParameter("@LoginPwd",objAdmin.IdCard)
             };
             //执行查询
             SqlDataReader objReader = SQLHelper.GetReader(sql, param);
             //处理查询结果
-            if(objReader.Read())
+            if (objReader.Read())
             {
                 objAdmin.AdminName = objReader["AdminName"].ToString();
                 objAdmin.StatusId = Convert.ToInt32(objReader["StatusId"]);
@@ -45,8 +45,59 @@ namespace DAL
                 objAdmin = null;//如果账号或密码不正确，则清空当前对象
             }
             objReader.Close();
-            
+
             return objAdmin;
         }
+
+        private SysAdmin GetInfoBySQL(string whereSql, SqlParameter[] param)
+        {
+            string sql = "select AdminId, AdminName, IdCard, Gender, AdminRole, PhoneNumber, Location from SysAdmins ";
+            sql += whereSql;
+            //执行查询
+            SqlDataReader objReader = SQLHelper.GetReader(sql, param);
+            SysAdmin sysAdmin = null;
+            if (objReader.Read())
+            {
+                sysAdmin = new SysAdmin()
+                {
+                    AdminId = (Int32)objReader["AdminId"],
+                    AdminName = objReader["AdminName"].ToString(),
+                    IdCard = objReader["IdCard"].ToString(),
+                    Gender = objReader["Gender"].ToString(),
+                    AdminRole = objReader["AdminRole"].ToString(),
+                    PhoneNumber = objReader["PhoneNumber"].ToString(),
+                    Location = objReader["Location"].ToString()
+                };
+
+            }
+            objReader.Close();
+            return sysAdmin;
+        }
+        //通过用户ID查找信息
+        public SysAdmin GetInfoByAdminId(string adminId)
+        {
+            return GetInfoBySQL(" where AdminId=@AdminId ", new SqlParameter[] { new SqlParameter("@AdminId", adminId) });
+        }
+        public SysAdmin GetInfoByIDCard(string idCard)
+        {
+            return GetInfoBySQL(" where IdCard=@IdCard ", new SqlParameter[] { new SqlParameter("@IdCard", idCard) });
+        }
+
+        public int EditAdmin(SysAdmin objAdmin)
+        {
+            string sql = " update SysAdmins set AdminName=@AdminName, Gender=@Gender, AdminRole=@AdminRole, PhoneNumber=@PhoneNumber,  IdCard=@IdCard, Location=@Location where AdminId=@AdminId ";
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@AdminName",objAdmin.AdminName),
+                new SqlParameter("@AdminId",objAdmin.AdminId),
+                new SqlParameter("@Gender",objAdmin.Gender),
+                new SqlParameter("@AdminRole",objAdmin.AdminRole),
+                new SqlParameter("@PhoneNumber",objAdmin.PhoneNumber),
+                new SqlParameter("@IdCard",objAdmin.IdCard),
+                new SqlParameter("@Location",objAdmin.Location)
+            };
+            return SQLHelper.Update(sql, param);
+        }
+
     }
 }

@@ -85,7 +85,7 @@ namespace DAL
 
         public int EditAdmin(SysAdmin objAdmin)
         {
-            string sql = " update SysAdmins set AdminName=@AdminName, Gender=@Gender, AdminRole=@AdminRole, PhoneNumber=@PhoneNumber,  IdCard=@IdCard, Location=@Location where AdminId=@AdminId ";
+            string sql = " update SysAdmins set AdminName=@AdminName, Gender=@Gender, AdminRole=@AdminRole, PhoneNumber=@PhoneNumber, Location=@Location where AdminId=@AdminId ";
             SqlParameter[] param = new SqlParameter[]
             {
                 new SqlParameter("@AdminName",objAdmin.AdminName),
@@ -93,11 +93,66 @@ namespace DAL
                 new SqlParameter("@Gender",objAdmin.Gender),
                 new SqlParameter("@AdminRole",objAdmin.AdminRole),
                 new SqlParameter("@PhoneNumber",objAdmin.PhoneNumber),
-                new SqlParameter("@IdCard",objAdmin.IdCard),
                 new SqlParameter("@Location",objAdmin.Location)
             };
             return SQLHelper.Update(sql, param);
         }
 
+        //删除用户信息
+        public int DeleteAdmin(string adminId)
+        {
+            string sql = "delete from SysAdmins where AdminId=@AdminId";
+            SqlParameter param = new SqlParameter("@AdminId", adminId);
+            try
+            {
+                return SQLHelper.Update(sql, param);
+            }
+            catch (SqlException ex)//防止外键被引用，多路异常捕获
+            {
+                if (ex.Number == 547)
+                    throw new Exception("当前用户信息已被其他数据表引用，不能直接删除！");
+                else
+                    throw new Exception("删除用户出现异常：" + ex.Message);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        //新增用户
+        public int AddAdmin(SysAdmin objAdmin)
+        {
+            string sql = "insert into SysAdmins(AdminId, AdminName, LoginPwd, StatusId,  IdCard, Gender, AdminRole, PhoneNumber, Location) ";
+            sql += "values(@AdminId, @AdminName, @LoginPwd, @StatusId, @IdCard, @Gender, @AdminRole, @PhoneNumber, @Location)";
+
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@AdminName",objAdmin.AdminName),
+                new SqlParameter("@AdminId",objAdmin.AdminId),
+                new SqlParameter("@LoginPwd",objAdmin.LoginPwd),
+                new SqlParameter("@StatusId",objAdmin.StatusId),
+                new SqlParameter("@IdCard",objAdmin.IdCard),
+                new SqlParameter("@Gender",objAdmin.Gender),
+                new SqlParameter("@AdminRole",objAdmin.AdminRole),
+                new SqlParameter("@PhoneNumber",objAdmin.PhoneNumber),
+                new SqlParameter("@Location",objAdmin.Location)
+            };
+            return SQLHelper.Update(sql, param);
+        }
+
+        //检测用户是否已经存在
+        public int GetCountByAdminId(string adminId)
+        {
+            string sql = "select count(*) from SysAdmins where AdminId=@AdminId";
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("@AdminId", adminId) };
+            return Convert.ToInt32(SQLHelper.GetSingleResult(sql, param));
+        }
+        public int GetCountByIdCard(string idCard)
+        {
+            string sql = "select count(*) from SysAdmins where IdCard=@IdCard";
+            SqlParameter[] param = new SqlParameter[] { new SqlParameter("@IdCard", idCard) };
+            return Convert.ToInt32(SQLHelper.GetSingleResult(sql, param));
+        }
     }
 }

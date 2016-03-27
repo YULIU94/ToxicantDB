@@ -269,9 +269,9 @@ namespace DAL
             catch (SqlException ex)//防止外键被引用，多路异常捕获
             {
                 if (ex.Number == 547)
-                    throw new Exception("当前图书已被其他数据表引用，不能直接删除！");
+                    throw new Exception("当前信息已被其他数据表引用，不能直接删除！");
                 else
-                    throw new Exception("删除图书出现异常：" + ex.Message);
+                    throw new Exception("删除信息出现异常：" + ex.Message);
             }
             catch (Exception ex)
             {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using DAL;
 using Models;
+using Common;
 
 namespace BLL
 {
@@ -31,6 +32,42 @@ namespace BLL
         public int EditAdmin(SysAdmin objAdmin)
         {
             return objSysAdminService.EditAdmin(objAdmin);
+        }
+
+        //删除用户
+        public int DeleteAdmin(string adminId)
+        {
+            return objSysAdminService.DeleteAdmin(adminId);
+        }
+
+        //新增用户
+        public int AddAdmin(SysAdmin objAdmin)
+        {
+            return objSysAdminService.AddAdmin(objAdmin);
+        }
+
+        //检测用户是否已经存在
+        public bool GetAdminByAdminId(string adminId)
+        {
+            int count = objSysAdminService.GetCountByAdminId(adminId);
+            if (count == 1)
+                return true;
+            else
+                return false;
+        }
+        public bool GetAdminByIdCard(string idCard)
+        {
+            int count = objSysAdminService.GetCountByIdCard(idCard);
+            if (count == 1)
+                return true;
+            else
+                return false;
+        }
+
+        //检测身份证号码格式是否正确
+        public bool IsIdCard(string idCard)
+        {
+            return DataValidate.IsIdentityCard(idCard);
         }
     }
 }

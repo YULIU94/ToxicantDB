@@ -51,7 +51,7 @@ namespace DAL
 
         private SysAdmin GetInfoBySQL(string whereSql, SqlParameter[] param)
         {
-            string sql = "select AdminId, AdminName, IdCard, Gender, AdminRole, PhoneNumber, Location from SysAdmins ";
+            string sql = "select AdminId, AdminName, LoginPwd, IdCard, Gender, AdminRole, PhoneNumber, Location from SysAdmins ";
             sql += whereSql;
             //执行查询
             SqlDataReader objReader = SQLHelper.GetReader(sql, param);
@@ -62,6 +62,7 @@ namespace DAL
                 {
                     AdminId = (Int32)objReader["AdminId"],
                     AdminName = objReader["AdminName"].ToString(),
+                    LoginPwd = objReader["LoginPwd"].ToString(),
                     IdCard = objReader["IdCard"].ToString(),
                     Gender = objReader["Gender"].ToString(),
                     AdminRole = objReader["AdminRole"].ToString(),
@@ -82,7 +83,8 @@ namespace DAL
         {
             return GetInfoBySQL(" where IdCard=@IdCard ", new SqlParameter[] { new SqlParameter("@IdCard", idCard) });
         }
-
+        #region 改
+        //修改用户信息
         public int EditAdmin(SysAdmin objAdmin)
         {
             string sql = " update SysAdmins set AdminName=@AdminName, Gender=@Gender, AdminRole=@AdminRole, PhoneNumber=@PhoneNumber, Location=@Location where AdminId=@AdminId ";
@@ -98,6 +100,19 @@ namespace DAL
             return SQLHelper.Update(sql, param);
         }
 
+        //修改用户密码
+        public int EditPwd(SysAdmin objAdmin)
+        {
+            string sql = "update SysAdmins set LoginPwd=@LoginPwd where AdminId=@AdminId ";
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@AdminId",objAdmin.AdminId),
+                new SqlParameter("@LoginPwd",objAdmin.LoginPwd)
+            };
+            return SQLHelper.Update(sql, param);
+        }
+
+        #endregion
         //删除用户信息
         public int DeleteAdmin(string adminId)
         {

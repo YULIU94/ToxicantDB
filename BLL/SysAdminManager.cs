@@ -21,6 +21,7 @@ namespace BLL
             return objSysAdminService.AdminLogin(objAdmin);
         }
 
+        //查找用户
         public SysAdmin GetInfoByAdminId(string adminId)
         {
             return objSysAdminService.GetInfoByAdminId(adminId);
@@ -29,9 +30,16 @@ namespace BLL
         {
             return objSysAdminService.GetInfoByIDCard(idCard);
         }
+
+        //修改用户信息
         public int EditAdmin(SysAdmin objAdmin)
         {
             return objSysAdminService.EditAdmin(objAdmin);
+        }
+
+        public int EditPwd(SysAdmin objAdmin)
+        {
+            return objSysAdminService.EditPwd(objAdmin);
         }
 
         //删除用户

@@ -89,7 +89,7 @@
             this.DescAdminId = new System.Windows.Forms.Label();
             this.DescAdminPwd = new System.Windows.Forms.Label();
             this.DescIDCard = new System.Windows.Forms.Label();
-            this.btnPwdModification = new System.Windows.Forms.Button();
+            this.btnEditPwd = new System.Windows.Forms.Button();
             this.tcUserManage.SuspendLayout();
             this.tpQuery.SuspendLayout();
             this.gbQuery.SuspendLayout();
@@ -155,7 +155,7 @@
             // 
             this.rdoFemale.AutoSize = true;
             this.rdoFemale.Checked = true;
-            this.rdoFemale.Location = new System.Drawing.Point(239, 407);
+            this.rdoFemale.Location = new System.Drawing.Point(239, 450);
             this.rdoFemale.Name = "rdoFemale";
             this.rdoFemale.Size = new System.Drawing.Size(35, 16);
             this.rdoFemale.TabIndex = 50;
@@ -167,7 +167,7 @@
             // 
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(175, 223);
+            this.btnEdit.Location = new System.Drawing.Point(207, 209);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(94, 37);
             this.btnEdit.TabIndex = 48;
@@ -179,7 +179,7 @@
             // rdoMale
             // 
             this.rdoMale.AutoSize = true;
-            this.rdoMale.Location = new System.Drawing.Point(157, 407);
+            this.rdoMale.Location = new System.Drawing.Point(157, 450);
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(35, 16);
             this.rdoMale.TabIndex = 51;
@@ -190,9 +190,9 @@
             // 
             this.btnQuery.Image = ((System.Drawing.Image)(resources.GetObject("btnQuery.Image")));
             this.btnQuery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery.Location = new System.Drawing.Point(55, 223);
+            this.btnQuery.Location = new System.Drawing.Point(80, 209);
             this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(96, 37);
+            this.btnQuery.Size = new System.Drawing.Size(94, 37);
             this.btnQuery.TabIndex = 47;
             this.btnQuery.Text = "提交查询  ";
             this.btnQuery.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -202,7 +202,7 @@
             // btnEditClose
             // 
             this.btnEditClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditClose.Location = new System.Drawing.Point(822, 489);
+            this.btnEditClose.Location = new System.Drawing.Point(822, 532);
             this.btnEditClose.Name = "btnEditClose";
             this.btnEditClose.Size = new System.Drawing.Size(94, 37);
             this.btnEditClose.TabIndex = 48;
@@ -223,7 +223,7 @@
             // btnSave
             // 
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(822, 426);
+            this.btnSave.Location = new System.Drawing.Point(822, 469);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 37);
             this.btnSave.TabIndex = 48;
@@ -254,7 +254,7 @@
             // lblLocation1
             // 
             this.lblLocation1.AutoSize = true;
-            this.lblLocation1.Location = new System.Drawing.Point(74, 507);
+            this.lblLocation1.Location = new System.Drawing.Point(74, 550);
             this.lblLocation1.Name = "lblLocation1";
             this.lblLocation1.Size = new System.Drawing.Size(65, 12);
             this.lblLocation1.TabIndex = 31;
@@ -273,7 +273,7 @@
             // lblAdminRole1
             // 
             this.lblAdminRole1.AutoSize = true;
-            this.lblAdminRole1.Location = new System.Drawing.Point(430, 358);
+            this.lblAdminRole1.Location = new System.Drawing.Point(430, 401);
             this.lblAdminRole1.Name = "lblAdminRole1";
             this.lblAdminRole1.Size = new System.Drawing.Size(65, 12);
             this.lblAdminRole1.TabIndex = 29;
@@ -292,7 +292,7 @@
             // lblGender1
             // 
             this.lblGender1.AutoSize = true;
-            this.lblGender1.Location = new System.Drawing.Point(74, 407);
+            this.lblGender1.Location = new System.Drawing.Point(74, 450);
             this.lblGender1.Name = "lblGender1";
             this.lblGender1.Size = new System.Drawing.Size(41, 12);
             this.lblGender1.TabIndex = 30;
@@ -311,7 +311,7 @@
             // lblPhone1
             // 
             this.lblPhone1.AutoSize = true;
-            this.lblPhone1.Location = new System.Drawing.Point(74, 451);
+            this.lblPhone1.Location = new System.Drawing.Point(74, 494);
             this.lblPhone1.Name = "lblPhone1";
             this.lblPhone1.Size = new System.Drawing.Size(65, 12);
             this.lblPhone1.TabIndex = 33;
@@ -330,7 +330,7 @@
             // lblAdminName1
             // 
             this.lblAdminName1.AutoSize = true;
-            this.lblAdminName1.Location = new System.Drawing.Point(74, 358);
+            this.lblAdminName1.Location = new System.Drawing.Point(74, 401);
             this.lblAdminName1.Name = "lblAdminName1";
             this.lblAdminName1.Size = new System.Drawing.Size(65, 12);
             this.lblAdminName1.TabIndex = 35;
@@ -339,7 +339,7 @@
             // txtLocation
             // 
             this.txtLocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLocation.Location = new System.Drawing.Point(145, 505);
+            this.txtLocation.Location = new System.Drawing.Point(145, 548);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(619, 21);
             this.txtLocation.TabIndex = 4;
@@ -356,7 +356,7 @@
             // txtPhone
             // 
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPhone.Location = new System.Drawing.Point(145, 449);
+            this.txtPhone.Location = new System.Drawing.Point(145, 492);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(234, 21);
             this.txtPhone.TabIndex = 4;
@@ -373,7 +373,7 @@
             // txtAdminRole
             // 
             this.txtAdminRole.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAdminRole.Location = new System.Drawing.Point(501, 356);
+            this.txtAdminRole.Location = new System.Drawing.Point(501, 399);
             this.txtAdminRole.Name = "txtAdminRole";
             this.txtAdminRole.Size = new System.Drawing.Size(263, 21);
             this.txtAdminRole.TabIndex = 4;
@@ -390,7 +390,7 @@
             // txtAdminName
             // 
             this.txtAdminName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAdminName.Location = new System.Drawing.Point(145, 356);
+            this.txtAdminName.Location = new System.Drawing.Point(145, 399);
             this.txtAdminName.Name = "txtAdminName";
             this.txtAdminName.Size = new System.Drawing.Size(234, 21);
             this.txtAdminName.TabIndex = 4;
@@ -476,12 +476,12 @@
             this.gbQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbQuery.Controls.Add(this.btnQuery);
-            this.gbQuery.Controls.Add(this.btnPwdModification);
+            this.gbQuery.Controls.Add(this.btnEditPwd);
             this.gbQuery.Controls.Add(this.btnDel);
             this.gbQuery.Controls.Add(this.btnEdit);
             this.gbQuery.Location = new System.Drawing.Point(-4, 0);
             this.gbQuery.Name = "gbQuery";
-            this.gbQuery.Size = new System.Drawing.Size(1007, 307);
+            this.gbQuery.Size = new System.Drawing.Size(1007, 344);
             this.gbQuery.TabIndex = 52;
             this.gbQuery.TabStop = false;
             // 
@@ -664,7 +664,7 @@
             // 
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(289, 223);
+            this.btnDel.Location = new System.Drawing.Point(80, 264);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(94, 37);
             this.btnDel.TabIndex = 48;
@@ -726,18 +726,18 @@
             this.DescIDCard.TabIndex = 53;
             this.DescIDCard.Text = "*";
             // 
-            // btnPwdModification
+            // btnEditPwd
             // 
-            this.btnPwdModification.Image = ((System.Drawing.Image)(resources.GetObject("btnPwdModification.Image")));
-            this.btnPwdModification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPwdModification.Location = new System.Drawing.Point(405, 223);
-            this.btnPwdModification.Name = "btnPwdModification";
-            this.btnPwdModification.Size = new System.Drawing.Size(94, 37);
-            this.btnPwdModification.TabIndex = 48;
-            this.btnPwdModification.Text = "密码修改";
-            this.btnPwdModification.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPwdModification.UseVisualStyleBackColor = true;
-            this.btnPwdModification.Click += new System.EventHandler(this.btnPwdModification_Click);
+            this.btnEditPwd.Image = ((System.Drawing.Image)(resources.GetObject("btnEditPwd.Image")));
+            this.btnEditPwd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditPwd.Location = new System.Drawing.Point(207, 264);
+            this.btnEditPwd.Name = "btnEditPwd";
+            this.btnEditPwd.Size = new System.Drawing.Size(94, 37);
+            this.btnEditPwd.TabIndex = 48;
+            this.btnEditPwd.Text = "密码修改";
+            this.btnEditPwd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditPwd.UseVisualStyleBackColor = true;
+            this.btnEditPwd.Click += new System.EventHandler(this.btnEditPwd_Click);
             // 
             // FrmAdminManage
             // 
@@ -819,6 +819,6 @@
         private System.Windows.Forms.Label DescIDCard;
         private System.Windows.Forms.Label DescAdminPwd;
         private System.Windows.Forms.Label DescAdminId;
-        private System.Windows.Forms.Button btnPwdModification;
+        private System.Windows.Forms.Button btnEditPwd;
     }
 }

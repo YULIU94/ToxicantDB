@@ -46,6 +46,7 @@ namespace ToxicantDB
 
             this.btnEdit.Enabled = false;
             this.btnDel.Enabled = false;
+            this.btnEditPwd.Enabled = false;
 
             this.btnEditClose.Visible = false;
             this.btnSave.Visible = false;
@@ -82,6 +83,7 @@ namespace ToxicantDB
 
                 this.btnEdit.Enabled = true;
                 this.btnDel.Enabled = true;
+                this.btnEditPwd.Enabled = true;
             }
             else
             {
@@ -302,9 +304,10 @@ namespace ToxicantDB
 
         }
 
-        private void btnPwdModification_Click(object sender, EventArgs e)
+        private void btnEditPwd_Click(object sender, EventArgs e)
         {
-
+            FrmEditPwd frmEditPwd = new FrmEditPwd(this.objCurrentAdmin);
+            frmEditPwd.Show();
         }
     }
 }

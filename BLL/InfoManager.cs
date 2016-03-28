@@ -80,7 +80,7 @@ namespace BLL
         public bool CasIdIsExisted(string casId)
         {
             int count = objInfoService.GetCountByCasId(casId);
-            if (count == 1)
+            if (count >= 1)
                 return true;
             else
                 return false;

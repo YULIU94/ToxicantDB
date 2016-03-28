@@ -90,6 +90,7 @@
             this.lblIDCard2 = new System.Windows.Forms.Label();
             this.lblGender2 = new System.Windows.Forms.Label();
             this.lblPhone2 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.tcUserManage.SuspendLayout();
             this.tpQuery.SuspendLayout();
             this.gbQuery.SuspendLayout();
@@ -455,6 +456,7 @@
             this.gbQuery.Controls.Add(this.btnEditPwd);
             this.gbQuery.Controls.Add(this.btnDel);
             this.gbQuery.Controls.Add(this.btnEdit);
+            this.gbQuery.Controls.Add(this.btnClose);
             this.gbQuery.Location = new System.Drawing.Point(-4, 0);
             this.gbQuery.Name = "gbQuery";
             this.gbQuery.Size = new System.Drawing.Size(1007, 344);
@@ -741,6 +743,17 @@
             this.lblPhone2.TabIndex = 33;
             this.lblPhone2.Text = "联系电话：";
             // 
+            // btnClose
+            // 
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(826, 264);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(94, 37);
+            this.btnClose.TabIndex = 48;
+            this.btnClose.Text = "关闭窗口";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FrmAdminManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -822,5 +835,6 @@
         private System.Windows.Forms.Label DescAdminPwd;
         private System.Windows.Forms.Label DescAdminId;
         public System.Windows.Forms.Button btnEditPwd;
+        private System.Windows.Forms.Button btnClose;
     }
 }

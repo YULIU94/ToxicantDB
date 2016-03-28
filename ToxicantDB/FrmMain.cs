@@ -73,7 +73,7 @@ namespace ToxicantDB
         {
             FrmDetailInput objFrm = new FrmDetailInput(this);//(差异)
             OpenForm(objFrm);
-            this.lblCurrent.Text = "信息输入";
+            this.lblCurrent.Text = "信息管理";
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace ToxicantDB
         {
             FrmInfoManage objFrm = new FrmInfoManage(this);//(差异)
             OpenForm(objFrm);
-            this.lblCurrent.Text = "信息输入";
+            this.lblCurrent.Text = "信息管理";
         }
 
         private void btnUserManage_Click(object sender, EventArgs e)
@@ -102,6 +102,12 @@ namespace ToxicantDB
             FrmAdminManage objFrm = new FrmAdminManage(this);//(差异)
             OpenForm(objFrm);
             this.lblCurrent.Text = "用户管理";
+        }
+
+        private void tsmi2_1_Click(object sender, EventArgs e)
+        {
+            FrmVersion objFrm = new FrmVersion();
+            objFrm.Show();
         }
 
     }

@@ -83,6 +83,13 @@ namespace ToxicantDB
                 this.txtCasId.Focus();
                 return;
             }
+            else if (this.objInfoManager.CasIdIsExisted(this.txtCasId.Text.Trim()))
+            {
+                MessageBox.Show("输入的CAS ID编号已存在！", "保存信息");
+                this.txtCasId.SelectAll();
+                this.txtCasId.Focus();
+                return;
+            }
             //化学名
             if (this.txtChemicalName.Text.Trim().Length == 0)
             {
@@ -114,6 +121,7 @@ namespace ToxicantDB
                 this.txtDensity.Focus();
                 return;
             }
+            
 
             #endregion
 

@@ -58,7 +58,7 @@ namespace BLL
         public bool GetAdminByAdminId(string adminId)
         {
             int count = objSysAdminService.GetCountByAdminId(adminId);
-            if (count == 1)
+            if (count >= 1)
                 return true;
             else
                 return false;
@@ -66,7 +66,7 @@ namespace BLL
         public bool GetAdminByIdCard(string idCard)
         {
             int count = objSysAdminService.GetCountByIdCard(idCard);
-            if (count == 1)
+            if (count >= 1)
                 return true;
             else
                 return false;

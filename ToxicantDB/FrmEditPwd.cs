@@ -65,6 +65,7 @@ namespace ToxicantDB
                 MessageBox.Show("原密码错误", "保存提示");
                 return;
             }
+
             
             //封装对象
             SysAdmin objAdmin = new SysAdmin()

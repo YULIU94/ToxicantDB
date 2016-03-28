@@ -30,22 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi2 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lblCurrent = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssl_Version = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnQuit = new System.Windows.Forms.Button();
             this.gbFrmMainButtons = new System.Windows.Forms.GroupBox();
             this.btnDetailInput = new System.Windows.Forms.Button();
             this.btnInfoInput = new System.Windows.Forms.Button();
-            this.btnAidInput = new System.Windows.Forms.Button();
+            this.btnInfoManage = new System.Windows.Forms.Button();
+            this.btnQuit = new System.Windows.Forms.Button();
             this.btnUserManage = new System.Windows.Forms.Button();
             this.btnInfoMaintenance = new System.Windows.Forms.Button();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.tssl_AdminName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsmi2_1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -59,26 +60,28 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
+            this.tsmi1,
+            this.tsmi2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
+            // tsmi1
             // 
-            this.toolStripMenuItem1.Enabled = false;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(44, 21);
-            this.toolStripMenuItem1.Text = "开始";
+            this.tsmi1.Enabled = false;
+            this.tsmi1.Name = "tsmi1";
+            this.tsmi1.Size = new System.Drawing.Size(44, 21);
+            this.tsmi1.Text = "开始";
             // 
-            // toolStripMenuItem2
+            // tsmi2
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(44, 21);
-            this.toolStripMenuItem2.Text = "关于";
+            this.tsmi2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi2_1});
+            this.tsmi2.Name = "tsmi2";
+            this.tsmi2.Size = new System.Drawing.Size(44, 21);
+            this.tsmi2.Text = "帮助";
             // 
             // splitContainer1
             // 
@@ -146,16 +149,6 @@
             this.tssl_Version.Size = new System.Drawing.Size(164, 17);
             this.tssl_Version.Text = "毒物数据库系统 版本号V0.10";
             // 
-            // btnQuit
-            // 
-            this.btnQuit.Location = new System.Drawing.Point(68, 363);
-            this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(104, 41);
-            this.btnQuit.TabIndex = 9;
-            this.btnQuit.Text = "退出系统";
-            this.btnQuit.UseVisualStyleBackColor = true;
-            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
-            // 
             // gbFrmMainButtons
             // 
             this.gbFrmMainButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -164,7 +157,7 @@
             this.gbFrmMainButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gbFrmMainButtons.Controls.Add(this.btnDetailInput);
             this.gbFrmMainButtons.Controls.Add(this.btnInfoInput);
-            this.gbFrmMainButtons.Controls.Add(this.btnAidInput);
+            this.gbFrmMainButtons.Controls.Add(this.btnInfoManage);
             this.gbFrmMainButtons.Controls.Add(this.btnQuit);
             this.gbFrmMainButtons.Controls.Add(this.btnUserManage);
             this.gbFrmMainButtons.Controls.Add(this.btnInfoMaintenance);
@@ -194,15 +187,25 @@
             this.btnInfoInput.UseVisualStyleBackColor = true;
             this.btnInfoInput.Click += new System.EventHandler(this.btnInput_Click_1);
             // 
-            // btnAidInput
+            // btnInfoManage
             // 
-            this.btnAidInput.Location = new System.Drawing.Point(68, 95);
-            this.btnAidInput.Name = "btnAidInput";
-            this.btnAidInput.Size = new System.Drawing.Size(104, 41);
-            this.btnAidInput.TabIndex = 2;
-            this.btnAidInput.Text = "基本信息管理";
-            this.btnAidInput.UseVisualStyleBackColor = true;
-            this.btnAidInput.Click += new System.EventHandler(this.btnAidInput_Click);
+            this.btnInfoManage.Location = new System.Drawing.Point(68, 95);
+            this.btnInfoManage.Name = "btnInfoManage";
+            this.btnInfoManage.Size = new System.Drawing.Size(104, 41);
+            this.btnInfoManage.TabIndex = 2;
+            this.btnInfoManage.Text = "基本信息管理";
+            this.btnInfoManage.UseVisualStyleBackColor = true;
+            this.btnInfoManage.Click += new System.EventHandler(this.btnAidInput_Click);
+            // 
+            // btnQuit
+            // 
+            this.btnQuit.Location = new System.Drawing.Point(68, 363);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(104, 41);
+            this.btnQuit.TabIndex = 9;
+            this.btnQuit.Text = "退出系统";
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // btnUserManage
             // 
@@ -238,6 +241,13 @@
             this.tssl_AdminName.Name = "tssl_AdminName";
             this.tssl_AdminName.Size = new System.Drawing.Size(0, 17);
             // 
+            // tsmi2_1
+            // 
+            this.tsmi2_1.Name = "tsmi2_1";
+            this.tsmi2_1.Size = new System.Drawing.Size(152, 22);
+            this.tsmi2_1.Text = "关于";
+            this.tsmi2_1.Click += new System.EventHandler(this.tsmi2_1_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -271,8 +281,8 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tsmi1;
+        private System.Windows.Forms.ToolStripMenuItem tsmi2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button btnInfoInput;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -284,9 +294,10 @@
         private System.Windows.Forms.ToolStripStatusLabel tssl_AdminName;
         private System.Windows.Forms.Label lblTitle;
         public System.Windows.Forms.Label lblCurrent;
-        private System.Windows.Forms.Button btnAidInput;
+        private System.Windows.Forms.Button btnInfoManage;
         private System.Windows.Forms.Button btnDetailInput;
         private System.Windows.Forms.GroupBox gbFrmMainButtons;
+        private System.Windows.Forms.ToolStripMenuItem tsmi2_1;
     }
 }
 

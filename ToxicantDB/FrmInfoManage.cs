@@ -187,6 +187,7 @@ namespace ToxicantDB
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            _parentForm.setLblCurrentText();
             this.Close();
         }
 

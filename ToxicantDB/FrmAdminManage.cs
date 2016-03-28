@@ -344,5 +344,11 @@ namespace ToxicantDB
                 btnQuery_Click(null, null);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            _parentForm.setLblCurrentText();
+            this.Close();
+        }
     }
 }

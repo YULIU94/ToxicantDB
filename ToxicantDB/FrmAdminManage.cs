@@ -130,7 +130,9 @@ namespace ToxicantDB
             this.txtPhone.Text = objCurrentAdmin.PhoneNumber;
             this.txtLocation.Text = objCurrentAdmin.Location;
 
-            //禁用tabpage2
+            //禁用按钮
+            this.btnDel.Enabled = false;
+            this.btnEditPwd.Enabled = false;
 
         }
 
@@ -200,7 +202,8 @@ namespace ToxicantDB
             //恢复禁用的按钮
             this.btnQuery.Enabled = true;
             this.btnEdit.Enabled = true;
-
+            this.btnDel.Enabled = true;
+            this.btnEditPwd.Enabled = true;
             if (this.txt_AdminId.Text.Trim().Length != 0)
             {
                 this.rdoAdminId.Checked = true;
@@ -226,8 +229,20 @@ namespace ToxicantDB
         //删除用户
         private void btnDel_Click(object sender, EventArgs e)
         {
+            //删除前的确认
+            DialogResult result = MessageBox.Show("确认要删除吗？", "删除询问", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Cancel)
+                return;
             string adminId = this.objCurrentAdmin.AdminId.ToString();
             objSysAdminManager.DeleteAdmin(adminId);
+            MessageBox.Show("删除成功", "删除提示");
+            foreach(Control item in this.tpQuery.Controls)
+            {
+                if (item is TextBox)
+                    item.Text = "";
+                if (item is Label)
+                    item.Text = "";
+            }
         }
         //新增用户
         private void btnAdd_Click(object sender, EventArgs e)
@@ -306,8 +321,28 @@ namespace ToxicantDB
 
         private void btnEditPwd_Click(object sender, EventArgs e)
         {
-            FrmEditPwd frmEditPwd = new FrmEditPwd(this.objCurrentAdmin);
+            FrmEditPwd frmEditPwd = new FrmEditPwd(this.objCurrentAdmin,this);
             frmEditPwd.Show();
+            //禁用按钮
+            this.btnQuery.Enabled = false;
+            this.btnEdit.Enabled = false;
+            this.btnDel.Enabled = false;
+            this.btnEditPwd.Enabled = false;
+        }
+        //输入框回车搜索
+        private void txt_AdminId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyValue==13)
+            {
+                btnQuery_Click(null,null);
+            }
+        }
+        private void txt_IDCard_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                btnQuery_Click(null, null);
+            }
         }
     }
 }

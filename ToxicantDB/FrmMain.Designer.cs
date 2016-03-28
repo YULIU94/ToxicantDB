@@ -37,14 +37,13 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssl_Version = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnUserManage = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
-            this.btnPwdModification = new System.Windows.Forms.Button();
-            this.btnInfoMaintenance = new System.Windows.Forms.Button();
             this.gbFrmMainButtons = new System.Windows.Forms.GroupBox();
             this.btnDetailInput = new System.Windows.Forms.Button();
             this.btnInfoInput = new System.Windows.Forms.Button();
             this.btnAidInput = new System.Windows.Forms.Button();
+            this.btnUserManage = new System.Windows.Forms.Button();
+            this.btnInfoMaintenance = new System.Windows.Forms.Button();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.tssl_AdminName = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
@@ -70,15 +69,16 @@
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.Enabled = false;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(136, 21);
-            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(44, 21);
+            this.toolStripMenuItem1.Text = "开始";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(136, 21);
-            this.toolStripMenuItem2.Text = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(44, 21);
+            this.toolStripMenuItem2.Text = "关于";
             // 
             // splitContainer1
             // 
@@ -94,8 +94,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.lblCurrent);
             this.splitContainer1.Panel1.Controls.Add(this.lblTitle);
             this.splitContainer1.Panel1.Controls.Add(this.statusStrip1);
-            this.splitContainer1.Panel1.Controls.Add(this.btnQuit);
-            this.splitContainer1.Panel1.Controls.Add(this.btnPwdModification);
             this.splitContainer1.Panel1.Controls.Add(this.gbFrmMainButtons);
             // 
             // splitContainer1.Panel2
@@ -148,43 +146,15 @@
             this.tssl_Version.Size = new System.Drawing.Size(164, 17);
             this.tssl_Version.Text = "毒物数据库系统 版本号V0.10";
             // 
-            // btnUserManage
-            // 
-            this.btnUserManage.Location = new System.Drawing.Point(68, 230);
-            this.btnUserManage.Name = "btnUserManage";
-            this.btnUserManage.Size = new System.Drawing.Size(104, 41);
-            this.btnUserManage.TabIndex = 7;
-            this.btnUserManage.Text = "用户管理";
-            this.btnUserManage.UseVisualStyleBackColor = true;
-            this.btnUserManage.Click += new System.EventHandler(this.btnUserManage_Click);
-            // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(129, 448);
+            this.btnQuit.Location = new System.Drawing.Point(68, 363);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(94, 41);
+            this.btnQuit.Size = new System.Drawing.Size(104, 41);
             this.btnQuit.TabIndex = 9;
             this.btnQuit.Text = "退出系统";
             this.btnQuit.UseVisualStyleBackColor = true;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
-            // 
-            // btnPwdModification
-            // 
-            this.btnPwdModification.Location = new System.Drawing.Point(16, 448);
-            this.btnPwdModification.Name = "btnPwdModification";
-            this.btnPwdModification.Size = new System.Drawing.Size(94, 41);
-            this.btnPwdModification.TabIndex = 8;
-            this.btnPwdModification.Text = "密码修改";
-            this.btnPwdModification.UseVisualStyleBackColor = true;
-            // 
-            // btnInfoMaintenance
-            // 
-            this.btnInfoMaintenance.Location = new System.Drawing.Point(68, 294);
-            this.btnInfoMaintenance.Name = "btnInfoMaintenance";
-            this.btnInfoMaintenance.Size = new System.Drawing.Size(104, 41);
-            this.btnInfoMaintenance.TabIndex = 6;
-            this.btnInfoMaintenance.Text = "信息维护";
-            this.btnInfoMaintenance.UseVisualStyleBackColor = true;
             // 
             // gbFrmMainButtons
             // 
@@ -195,6 +165,7 @@
             this.gbFrmMainButtons.Controls.Add(this.btnDetailInput);
             this.gbFrmMainButtons.Controls.Add(this.btnInfoInput);
             this.gbFrmMainButtons.Controls.Add(this.btnAidInput);
+            this.gbFrmMainButtons.Controls.Add(this.btnQuit);
             this.gbFrmMainButtons.Controls.Add(this.btnUserManage);
             this.gbFrmMainButtons.Controls.Add(this.btnInfoMaintenance);
             this.gbFrmMainButtons.Location = new System.Drawing.Point(0, 87);
@@ -232,6 +203,25 @@
             this.btnAidInput.Text = "基本信息管理";
             this.btnAidInput.UseVisualStyleBackColor = true;
             this.btnAidInput.Click += new System.EventHandler(this.btnAidInput_Click);
+            // 
+            // btnUserManage
+            // 
+            this.btnUserManage.Location = new System.Drawing.Point(68, 230);
+            this.btnUserManage.Name = "btnUserManage";
+            this.btnUserManage.Size = new System.Drawing.Size(104, 41);
+            this.btnUserManage.TabIndex = 7;
+            this.btnUserManage.Text = "用户管理";
+            this.btnUserManage.UseVisualStyleBackColor = true;
+            this.btnUserManage.Click += new System.EventHandler(this.btnUserManage_Click);
+            // 
+            // btnInfoMaintenance
+            // 
+            this.btnInfoMaintenance.Location = new System.Drawing.Point(68, 294);
+            this.btnInfoMaintenance.Name = "btnInfoMaintenance";
+            this.btnInfoMaintenance.Size = new System.Drawing.Size(104, 41);
+            this.btnInfoMaintenance.TabIndex = 6;
+            this.btnInfoMaintenance.Text = "信息维护";
+            this.btnInfoMaintenance.UseVisualStyleBackColor = true;
             // 
             // statusStrip2
             // 
@@ -288,7 +278,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Button btnUserManage;
         private System.Windows.Forms.Button btnQuit;
-        private System.Windows.Forms.Button btnPwdModification;
         private System.Windows.Forms.Button btnInfoMaintenance;
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel tssl_Version;

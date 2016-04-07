@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>MS.TestPlatform.UnitTestFramework.Specifications.Signed</id>
+    <version>1.0.2.0</version>
+    <title>MS.TestPlatform.UnitTestFramework.Specifications.Signed</title>
+    <authors>Marco Stolze (mcpride)</authors>
+    <owners>Marco Stolze (mcpride)</owners>
+    <licenseUrl>https://github.com/mcpride/MS.TestPlatform</licenseUrl>
+    <projectUrl>https://github.com/mcpride/MS.TestPlatform</projectUrl>
+    <iconUrl>https://github.com/mcpride/MS.TestPlatform/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>BDD test specifications for windows store and windows phone apps similar to MSTestContrib. Signed version!</description>
+    <releaseNotes />
+    <copyright>Copyright © Marco Stolze 2013</copyright>
+    <language>en-US</language>
+    <tags>winrt windowsstore win8 metro test unittest bdd specifications specs mstest</tags>
+  </metadata>
+</package>

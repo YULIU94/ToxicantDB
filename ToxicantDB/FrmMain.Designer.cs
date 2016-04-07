@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmi1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi2_1 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lblCurrent = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.btnInfoMaintenance = new System.Windows.Forms.Button();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.tssl_AdminName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tsmi2_1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -82,6 +82,13 @@
             this.tsmi2.Name = "tsmi2";
             this.tsmi2.Size = new System.Drawing.Size(44, 21);
             this.tsmi2.Text = "帮助";
+            // 
+            // tsmi2_1
+            // 
+            this.tsmi2_1.Name = "tsmi2_1";
+            this.tsmi2_1.Size = new System.Drawing.Size(100, 22);
+            this.tsmi2_1.Text = "关于";
+            this.tsmi2_1.Click += new System.EventHandler(this.tsmi2_1_Click);
             // 
             // splitContainer1
             // 
@@ -240,13 +247,6 @@
             // 
             this.tssl_AdminName.Name = "tssl_AdminName";
             this.tssl_AdminName.Size = new System.Drawing.Size(0, 17);
-            // 
-            // tsmi2_1
-            // 
-            this.tsmi2_1.Name = "tsmi2_1";
-            this.tsmi2_1.Size = new System.Drawing.Size(152, 22);
-            this.tsmi2_1.Text = "关于";
-            this.tsmi2_1.Click += new System.EventHandler(this.tsmi2_1_Click);
             // 
             // FrmMain
             // 

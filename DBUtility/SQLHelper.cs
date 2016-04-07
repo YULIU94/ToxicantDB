@@ -222,17 +222,6 @@ namespace DBUtility
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandType = CommandType.StoredProcedure; //指定执行存储过程操作 
             cmd.CommandText = ProcName; //存储过程名称 
-
-            ////对应存储过程QueryInfoByName的第一个参数@BarCode 
-            //SqlParameter BarCode = new SqlParameter("@BarCode", SqlDbType.VarChar, 20);
-            ////指定参数@BarCode要转入的值 
-            //BarCode.Value = txt_name;
-
-            ////对应存储过程QueryInfoByName的第二个参数@BookName 
-            //SqlParameter BookName = new SqlParameter("@BookName", SqlDbType.VarChar, 100);
-            ////指定参数@age要转入的值 
-            //BookName.Value = txt_age; 
-
             cmd.Parameters.AddRange(param);
             try
             {

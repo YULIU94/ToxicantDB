@@ -108,6 +108,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackgroundImage = global::ToxicantDB.Properties.Resources.bgMain3;
             this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip2);
             this.splitContainer1.Panel2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 22);

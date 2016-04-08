@@ -67,6 +67,7 @@
             this.btnEditPwd = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.tpAdd = new System.Windows.Forms.TabPage();
             this.DescIDCard = new System.Windows.Forms.Label();
             this.DescAdminPwd = new System.Windows.Forms.Label();
@@ -90,7 +91,6 @@
             this.lblIDCard2 = new System.Windows.Forms.Label();
             this.lblGender2 = new System.Windows.Forms.Label();
             this.lblPhone2 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.tcUserManage.SuspendLayout();
             this.tpQuery.SuspendLayout();
             this.gbQuery.SuspendLayout();
@@ -515,6 +515,17 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(826, 264);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(94, 37);
+            this.btnClose.TabIndex = 48;
+            this.btnClose.Text = "关闭窗口";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // tpAdd
             // 
             this.tpAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -743,23 +754,13 @@
             this.lblPhone2.TabIndex = 33;
             this.lblPhone2.Text = "联系电话：";
             // 
-            // btnClose
-            // 
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(826, 264);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(94, 37);
-            this.btnClose.TabIndex = 48;
-            this.btnClose.Text = "关闭窗口";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // FrmAdminManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 681);
             this.Controls.Add(this.tcUserManage);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAdminManage";
             this.Text = "用户管理";
             this.tcUserManage.ResumeLayout(false);

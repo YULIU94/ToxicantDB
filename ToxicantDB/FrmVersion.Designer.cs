@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVersion));
             this.lblVersion = new System.Windows.Forms.Label();
             this.lbl_Version = new System.Windows.Forms.Label();
             this.lblDeclaration = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             this.Controls.Add(this.lblDeclaration);
             this.Controls.Add(this.lbl_Version);
             this.Controls.Add(this.lblVersion);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmVersion";
             this.Text = "关于毒物数据库系统";
             this.ResumeLayout(false);

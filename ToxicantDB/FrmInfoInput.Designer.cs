@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInfoInput));
             this.lblCasId = new System.Windows.Forms.Label();
             this.txtCasId = new System.Windows.Forms.TextBox();
             this.lblChemicalName = new System.Windows.Forms.Label();
@@ -60,6 +61,20 @@
             this.gbInputProperty = new System.Windows.Forms.GroupBox();
             this.gbInputInfo = new System.Windows.Forms.GroupBox();
             this.dgvInfoList = new System.Windows.Forms.DataGridView();
+            this.casIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChemicalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChineseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TraditionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RtecsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Element = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StateInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Odor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RelativeMolecularMass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Solubility = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Density = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.infoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.toxicDBDataSet3 = new ToxicantDB.ToxicDBDataSet3();
             this.propertiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toxicDBDataSet = new ToxicantDB.ToxicDBDataSet();
             this.infoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -73,22 +88,10 @@
             this.toxicDBDataSet2 = new ToxicantDB.ToxicDBDataSet2();
             this.infoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.infoTableAdapter2 = new ToxicantDB.ToxicDBDataSet2TableAdapters.InfoTableAdapter();
-            this.toxicDBDataSet3 = new ToxicantDB.ToxicDBDataSet3();
-            this.infoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.infoTableAdapter3 = new ToxicantDB.ToxicDBDataSet3TableAdapters.InfoTableAdapter();
-            this.casIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChemicalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChineseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TraditionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RtecsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Element = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StateInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Odor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RelativeMolecularMass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Solubility = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Density = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.propertiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).BeginInit();
@@ -96,8 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCasId
@@ -390,93 +391,6 @@
             this.dgvInfoList.Size = new System.Drawing.Size(962, 346);
             this.dgvInfoList.TabIndex = 9;
             // 
-            // propertiesBindingSource
-            // 
-            this.propertiesBindingSource.DataMember = "Properties";
-            this.propertiesBindingSource.DataSource = this.toxicDBDataSet;
-            // 
-            // toxicDBDataSet
-            // 
-            this.toxicDBDataSet.DataSetName = "ToxicDBDataSet";
-            this.toxicDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // infoBindingSource
-            // 
-            this.infoBindingSource.DataMember = "Info";
-            this.infoBindingSource.DataSource = this.toxicDBDataSet;
-            // 
-            // infoTableAdapter
-            // 
-            this.infoTableAdapter.ClearBeforeFill = true;
-            // 
-            // propertiesTableAdapter
-            // 
-            this.propertiesTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnInputClose
-            // 
-            this.btnInputClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInputClose.Location = new System.Drawing.Point(890, 267);
-            this.btnInputClose.Name = "btnInputClose";
-            this.btnInputClose.Size = new System.Drawing.Size(96, 32);
-            this.btnInputClose.TabIndex = 14;
-            this.btnInputClose.Text = "关闭窗口";
-            this.btnInputClose.UseVisualStyleBackColor = true;
-            this.btnInputClose.Click += new System.EventHandler(this.btnInputClose_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(759, 267);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(96, 32);
-            this.btnSave.TabIndex = 14;
-            this.btnSave.Text = "保存信息";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // toxicDBDataSet1
-            // 
-            this.toxicDBDataSet1.DataSetName = "ToxicDBDataSet1";
-            this.toxicDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // infoBindingSource1
-            // 
-            this.infoBindingSource1.DataMember = "Info";
-            this.infoBindingSource1.DataSource = this.toxicDBDataSet1;
-            // 
-            // infoTableAdapter1
-            // 
-            this.infoTableAdapter1.ClearBeforeFill = true;
-            // 
-            // toxicDBDataSet2
-            // 
-            this.toxicDBDataSet2.DataSetName = "ToxicDBDataSet2";
-            this.toxicDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // infoBindingSource2
-            // 
-            this.infoBindingSource2.DataMember = "Info";
-            this.infoBindingSource2.DataSource = this.toxicDBDataSet2;
-            // 
-            // infoTableAdapter2
-            // 
-            this.infoTableAdapter2.ClearBeforeFill = true;
-            // 
-            // toxicDBDataSet3
-            // 
-            this.toxicDBDataSet3.DataSetName = "ToxicDBDataSet3";
-            this.toxicDBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // infoBindingSource3
-            // 
-            this.infoBindingSource3.DataMember = "Info";
-            this.infoBindingSource3.DataSource = this.toxicDBDataSet3;
-            // 
-            // infoTableAdapter3
-            // 
-            this.infoTableAdapter3.ClearBeforeFill = true;
-            // 
             // casIdDataGridViewTextBoxColumn
             // 
             this.casIdDataGridViewTextBoxColumn.DataPropertyName = "CasId";
@@ -561,6 +475,93 @@
             this.Density.Name = "Density";
             this.Density.ReadOnly = true;
             // 
+            // infoBindingSource3
+            // 
+            this.infoBindingSource3.DataMember = "Info";
+            this.infoBindingSource3.DataSource = this.toxicDBDataSet3;
+            // 
+            // toxicDBDataSet3
+            // 
+            this.toxicDBDataSet3.DataSetName = "ToxicDBDataSet3";
+            this.toxicDBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // propertiesBindingSource
+            // 
+            this.propertiesBindingSource.DataMember = "Properties";
+            this.propertiesBindingSource.DataSource = this.toxicDBDataSet;
+            // 
+            // toxicDBDataSet
+            // 
+            this.toxicDBDataSet.DataSetName = "ToxicDBDataSet";
+            this.toxicDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // infoBindingSource
+            // 
+            this.infoBindingSource.DataMember = "Info";
+            this.infoBindingSource.DataSource = this.toxicDBDataSet;
+            // 
+            // infoTableAdapter
+            // 
+            this.infoTableAdapter.ClearBeforeFill = true;
+            // 
+            // propertiesTableAdapter
+            // 
+            this.propertiesTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnInputClose
+            // 
+            this.btnInputClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInputClose.Location = new System.Drawing.Point(890, 267);
+            this.btnInputClose.Name = "btnInputClose";
+            this.btnInputClose.Size = new System.Drawing.Size(96, 32);
+            this.btnInputClose.TabIndex = 14;
+            this.btnInputClose.Text = "关闭窗口";
+            this.btnInputClose.UseVisualStyleBackColor = true;
+            this.btnInputClose.Click += new System.EventHandler(this.btnInputClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(759, 267);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(96, 32);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "保存信息";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // toxicDBDataSet1
+            // 
+            this.toxicDBDataSet1.DataSetName = "ToxicDBDataSet1";
+            this.toxicDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // infoBindingSource1
+            // 
+            this.infoBindingSource1.DataMember = "Info";
+            this.infoBindingSource1.DataSource = this.toxicDBDataSet1;
+            // 
+            // infoTableAdapter1
+            // 
+            this.infoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // toxicDBDataSet2
+            // 
+            this.toxicDBDataSet2.DataSetName = "ToxicDBDataSet2";
+            this.toxicDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // infoBindingSource2
+            // 
+            this.infoBindingSource2.DataMember = "Info";
+            this.infoBindingSource2.DataSource = this.toxicDBDataSet2;
+            // 
+            // infoTableAdapter2
+            // 
+            this.infoTableAdapter2.ClearBeforeFill = true;
+            // 
+            // infoTableAdapter3
+            // 
+            this.infoTableAdapter3.ClearBeforeFill = true;
+            // 
             // FrmInfoInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -600,12 +601,15 @@
             this.Controls.Add(this.gbInputProperty);
             this.Controls.Add(this.gbInputInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmInfoInput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "输入信息";
             this.Load += new System.EventHandler(this.FrmInput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.propertiesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).EndInit();
@@ -613,8 +617,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

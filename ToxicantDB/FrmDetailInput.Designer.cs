@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetailInput));
             this.gbToxicQuery = new System.Windows.Forms.GroupBox();
             this.btnQuery = new System.Windows.Forms.Button();
             this.txtChineseName = new System.Windows.Forms.TextBox();
@@ -55,14 +56,6 @@
             this.txtLd50 = new System.Windows.Forms.TextBox();
             this.lblLd50 = new System.Windows.Forms.Label();
             this.dgvQueryResult = new System.Windows.Forms.DataGridView();
-            this.infoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.toxicDBDataSet4 = new ToxicantDB.ToxicDBDataSet4();
-            this.gbQueryResult = new System.Windows.Forms.GroupBox();
-            this.toxicDBDataSet3 = new ToxicantDB.ToxicDBDataSet3();
-            this.toxicDBDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.infoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.infoTableAdapter = new ToxicantDB.ToxicDBDataSet3TableAdapters.InfoTableAdapter();
-            this.infoTableAdapter1 = new ToxicantDB.ToxicDBDataSet4TableAdapters.InfoTableAdapter();
             this.CasId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChemicalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChineseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,15 +70,45 @@
             this.AidEye = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AidInhalation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AidIngestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbQueryResult = new System.Windows.Forms.GroupBox();
+            this.infoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.infoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.casIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chemicalNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chineseNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.traditionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rtecsIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateInfoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.odorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.relativeMolecularMassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.solubilityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.densityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ld50DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toxicDegreeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toxicDetailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.healthHarzardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.environmentHarzardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aidSkinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aidEyeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aidInhalationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aidIngestionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.infoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.toxicDBDataSet4 = new ToxicantDB.ToxicDBDataSet4();
+            this.toxicDBDataSet3 = new ToxicantDB.ToxicDBDataSet3();
+            this.toxicDBDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.infoTableAdapter = new ToxicantDB.ToxicDBDataSet3TableAdapters.InfoTableAdapter();
+            this.infoTableAdapter1 = new ToxicantDB.ToxicDBDataSet4TableAdapters.InfoTableAdapter();
             this.gbToxicQuery.SuspendLayout();
             this.gbRichText.SuspendLayout();
             this.gbOtherInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQueryResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbToxicQuery
@@ -365,7 +388,29 @@
             this.AidSkin,
             this.AidEye,
             this.AidInhalation,
-            this.AidIngestion});
+            this.AidIngestion,
+            this.infoIdDataGridViewTextBoxColumn,
+            this.casIdDataGridViewTextBoxColumn,
+            this.chemicalNameDataGridViewTextBoxColumn,
+            this.chineseNameDataGridViewTextBoxColumn,
+            this.traditionNameDataGridViewTextBoxColumn,
+            this.rtecsIdDataGridViewTextBoxColumn,
+            this.elementDataGridViewTextBoxColumn,
+            this.stateInfoDataGridViewTextBoxColumn,
+            this.odorDataGridViewTextBoxColumn,
+            this.colorDataGridViewTextBoxColumn,
+            this.relativeMolecularMassDataGridViewTextBoxColumn,
+            this.solubilityDataGridViewTextBoxColumn,
+            this.densityDataGridViewTextBoxColumn,
+            this.ld50DataGridViewTextBoxColumn,
+            this.toxicDegreeDataGridViewTextBoxColumn,
+            this.toxicDetailDataGridViewTextBoxColumn,
+            this.healthHarzardDataGridViewTextBoxColumn,
+            this.environmentHarzardDataGridViewTextBoxColumn,
+            this.aidSkinDataGridViewTextBoxColumn,
+            this.aidEyeDataGridViewTextBoxColumn,
+            this.aidInhalationDataGridViewTextBoxColumn,
+            this.aidIngestionDataGridViewTextBoxColumn});
             this.dgvQueryResult.DataSource = this.infoBindingSource1;
             this.dgvQueryResult.Location = new System.Drawing.Point(33, 177);
             this.dgvQueryResult.Name = "dgvQueryResult";
@@ -375,48 +420,6 @@
             this.dgvQueryResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQueryResult.Size = new System.Drawing.Size(441, 307);
             this.dgvQueryResult.TabIndex = 7;
-            // 
-            // infoBindingSource1
-            // 
-            this.infoBindingSource1.DataMember = "Info";
-            this.infoBindingSource1.DataSource = this.toxicDBDataSet4;
-            // 
-            // toxicDBDataSet4
-            // 
-            this.toxicDBDataSet4.DataSetName = "ToxicDBDataSet4";
-            this.toxicDBDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // gbQueryResult
-            // 
-            this.gbQueryResult.Location = new System.Drawing.Point(27, 157);
-            this.gbQueryResult.Name = "gbQueryResult";
-            this.gbQueryResult.Size = new System.Drawing.Size(453, 333);
-            this.gbQueryResult.TabIndex = 8;
-            this.gbQueryResult.TabStop = false;
-            this.gbQueryResult.Text = "查询结果";
-            // 
-            // toxicDBDataSet3
-            // 
-            this.toxicDBDataSet3.DataSetName = "ToxicDBDataSet3";
-            this.toxicDBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // toxicDBDataSet3BindingSource
-            // 
-            this.toxicDBDataSet3BindingSource.DataSource = this.toxicDBDataSet3;
-            this.toxicDBDataSet3BindingSource.Position = 0;
-            // 
-            // infoBindingSource
-            // 
-            this.infoBindingSource.DataMember = "Info";
-            this.infoBindingSource.DataSource = this.toxicDBDataSet3BindingSource;
-            // 
-            // infoTableAdapter
-            // 
-            this.infoTableAdapter.ClearBeforeFill = true;
-            // 
-            // infoTableAdapter1
-            // 
-            this.infoTableAdapter1.ClearBeforeFill = true;
             // 
             // CasId
             // 
@@ -516,6 +519,202 @@
             this.AidIngestion.Name = "AidIngestion";
             this.AidIngestion.ReadOnly = true;
             // 
+            // gbQueryResult
+            // 
+            this.gbQueryResult.Location = new System.Drawing.Point(27, 157);
+            this.gbQueryResult.Name = "gbQueryResult";
+            this.gbQueryResult.Size = new System.Drawing.Size(453, 333);
+            this.gbQueryResult.TabIndex = 8;
+            this.gbQueryResult.TabStop = false;
+            this.gbQueryResult.Text = "查询结果";
+            // 
+            // infoBindingSource
+            // 
+            this.infoBindingSource.DataMember = "Info";
+            this.infoBindingSource.DataSource = this.toxicDBDataSet3BindingSource;
+            // 
+            // infoIdDataGridViewTextBoxColumn
+            // 
+            this.infoIdDataGridViewTextBoxColumn.DataPropertyName = "InfoId";
+            this.infoIdDataGridViewTextBoxColumn.HeaderText = "InfoId";
+            this.infoIdDataGridViewTextBoxColumn.Name = "infoIdDataGridViewTextBoxColumn";
+            this.infoIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // casIdDataGridViewTextBoxColumn
+            // 
+            this.casIdDataGridViewTextBoxColumn.DataPropertyName = "CasId";
+            this.casIdDataGridViewTextBoxColumn.HeaderText = "CasId";
+            this.casIdDataGridViewTextBoxColumn.Name = "casIdDataGridViewTextBoxColumn";
+            this.casIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // chemicalNameDataGridViewTextBoxColumn
+            // 
+            this.chemicalNameDataGridViewTextBoxColumn.DataPropertyName = "ChemicalName";
+            this.chemicalNameDataGridViewTextBoxColumn.HeaderText = "ChemicalName";
+            this.chemicalNameDataGridViewTextBoxColumn.Name = "chemicalNameDataGridViewTextBoxColumn";
+            this.chemicalNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // chineseNameDataGridViewTextBoxColumn
+            // 
+            this.chineseNameDataGridViewTextBoxColumn.DataPropertyName = "ChineseName";
+            this.chineseNameDataGridViewTextBoxColumn.HeaderText = "ChineseName";
+            this.chineseNameDataGridViewTextBoxColumn.Name = "chineseNameDataGridViewTextBoxColumn";
+            this.chineseNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // traditionNameDataGridViewTextBoxColumn
+            // 
+            this.traditionNameDataGridViewTextBoxColumn.DataPropertyName = "TraditionName";
+            this.traditionNameDataGridViewTextBoxColumn.HeaderText = "TraditionName";
+            this.traditionNameDataGridViewTextBoxColumn.Name = "traditionNameDataGridViewTextBoxColumn";
+            this.traditionNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rtecsIdDataGridViewTextBoxColumn
+            // 
+            this.rtecsIdDataGridViewTextBoxColumn.DataPropertyName = "RtecsId";
+            this.rtecsIdDataGridViewTextBoxColumn.HeaderText = "RtecsId";
+            this.rtecsIdDataGridViewTextBoxColumn.Name = "rtecsIdDataGridViewTextBoxColumn";
+            this.rtecsIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // elementDataGridViewTextBoxColumn
+            // 
+            this.elementDataGridViewTextBoxColumn.DataPropertyName = "Element";
+            this.elementDataGridViewTextBoxColumn.HeaderText = "Element";
+            this.elementDataGridViewTextBoxColumn.Name = "elementDataGridViewTextBoxColumn";
+            this.elementDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // stateInfoDataGridViewTextBoxColumn
+            // 
+            this.stateInfoDataGridViewTextBoxColumn.DataPropertyName = "StateInfo";
+            this.stateInfoDataGridViewTextBoxColumn.HeaderText = "StateInfo";
+            this.stateInfoDataGridViewTextBoxColumn.Name = "stateInfoDataGridViewTextBoxColumn";
+            this.stateInfoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // odorDataGridViewTextBoxColumn
+            // 
+            this.odorDataGridViewTextBoxColumn.DataPropertyName = "Odor";
+            this.odorDataGridViewTextBoxColumn.HeaderText = "Odor";
+            this.odorDataGridViewTextBoxColumn.Name = "odorDataGridViewTextBoxColumn";
+            this.odorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // colorDataGridViewTextBoxColumn
+            // 
+            this.colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
+            this.colorDataGridViewTextBoxColumn.HeaderText = "Color";
+            this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
+            this.colorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // relativeMolecularMassDataGridViewTextBoxColumn
+            // 
+            this.relativeMolecularMassDataGridViewTextBoxColumn.DataPropertyName = "RelativeMolecularMass";
+            this.relativeMolecularMassDataGridViewTextBoxColumn.HeaderText = "RelativeMolecularMass";
+            this.relativeMolecularMassDataGridViewTextBoxColumn.Name = "relativeMolecularMassDataGridViewTextBoxColumn";
+            this.relativeMolecularMassDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // solubilityDataGridViewTextBoxColumn
+            // 
+            this.solubilityDataGridViewTextBoxColumn.DataPropertyName = "Solubility";
+            this.solubilityDataGridViewTextBoxColumn.HeaderText = "Solubility";
+            this.solubilityDataGridViewTextBoxColumn.Name = "solubilityDataGridViewTextBoxColumn";
+            this.solubilityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // densityDataGridViewTextBoxColumn
+            // 
+            this.densityDataGridViewTextBoxColumn.DataPropertyName = "Density";
+            this.densityDataGridViewTextBoxColumn.HeaderText = "Density";
+            this.densityDataGridViewTextBoxColumn.Name = "densityDataGridViewTextBoxColumn";
+            this.densityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ld50DataGridViewTextBoxColumn
+            // 
+            this.ld50DataGridViewTextBoxColumn.DataPropertyName = "Ld50";
+            this.ld50DataGridViewTextBoxColumn.HeaderText = "Ld50";
+            this.ld50DataGridViewTextBoxColumn.Name = "ld50DataGridViewTextBoxColumn";
+            this.ld50DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // toxicDegreeDataGridViewTextBoxColumn
+            // 
+            this.toxicDegreeDataGridViewTextBoxColumn.DataPropertyName = "ToxicDegree";
+            this.toxicDegreeDataGridViewTextBoxColumn.HeaderText = "ToxicDegree";
+            this.toxicDegreeDataGridViewTextBoxColumn.Name = "toxicDegreeDataGridViewTextBoxColumn";
+            this.toxicDegreeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // toxicDetailDataGridViewTextBoxColumn
+            // 
+            this.toxicDetailDataGridViewTextBoxColumn.DataPropertyName = "ToxicDetail";
+            this.toxicDetailDataGridViewTextBoxColumn.HeaderText = "ToxicDetail";
+            this.toxicDetailDataGridViewTextBoxColumn.Name = "toxicDetailDataGridViewTextBoxColumn";
+            this.toxicDetailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // healthHarzardDataGridViewTextBoxColumn
+            // 
+            this.healthHarzardDataGridViewTextBoxColumn.DataPropertyName = "HealthHarzard";
+            this.healthHarzardDataGridViewTextBoxColumn.HeaderText = "HealthHarzard";
+            this.healthHarzardDataGridViewTextBoxColumn.Name = "healthHarzardDataGridViewTextBoxColumn";
+            this.healthHarzardDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // environmentHarzardDataGridViewTextBoxColumn
+            // 
+            this.environmentHarzardDataGridViewTextBoxColumn.DataPropertyName = "EnvironmentHarzard";
+            this.environmentHarzardDataGridViewTextBoxColumn.HeaderText = "EnvironmentHarzard";
+            this.environmentHarzardDataGridViewTextBoxColumn.Name = "environmentHarzardDataGridViewTextBoxColumn";
+            this.environmentHarzardDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aidSkinDataGridViewTextBoxColumn
+            // 
+            this.aidSkinDataGridViewTextBoxColumn.DataPropertyName = "AidSkin";
+            this.aidSkinDataGridViewTextBoxColumn.HeaderText = "AidSkin";
+            this.aidSkinDataGridViewTextBoxColumn.Name = "aidSkinDataGridViewTextBoxColumn";
+            this.aidSkinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aidEyeDataGridViewTextBoxColumn
+            // 
+            this.aidEyeDataGridViewTextBoxColumn.DataPropertyName = "AidEye";
+            this.aidEyeDataGridViewTextBoxColumn.HeaderText = "AidEye";
+            this.aidEyeDataGridViewTextBoxColumn.Name = "aidEyeDataGridViewTextBoxColumn";
+            this.aidEyeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aidInhalationDataGridViewTextBoxColumn
+            // 
+            this.aidInhalationDataGridViewTextBoxColumn.DataPropertyName = "AidInhalation";
+            this.aidInhalationDataGridViewTextBoxColumn.HeaderText = "AidInhalation";
+            this.aidInhalationDataGridViewTextBoxColumn.Name = "aidInhalationDataGridViewTextBoxColumn";
+            this.aidInhalationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // aidIngestionDataGridViewTextBoxColumn
+            // 
+            this.aidIngestionDataGridViewTextBoxColumn.DataPropertyName = "AidIngestion";
+            this.aidIngestionDataGridViewTextBoxColumn.HeaderText = "AidIngestion";
+            this.aidIngestionDataGridViewTextBoxColumn.Name = "aidIngestionDataGridViewTextBoxColumn";
+            this.aidIngestionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // infoBindingSource1
+            // 
+            this.infoBindingSource1.DataMember = "Info";
+            this.infoBindingSource1.DataSource = this.toxicDBDataSet4;
+            // 
+            // toxicDBDataSet4
+            // 
+            this.toxicDBDataSet4.DataSetName = "ToxicDBDataSet4";
+            this.toxicDBDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // toxicDBDataSet3
+            // 
+            this.toxicDBDataSet3.DataSetName = "ToxicDBDataSet3";
+            this.toxicDBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // toxicDBDataSet3BindingSource
+            // 
+            this.toxicDBDataSet3BindingSource.DataSource = this.toxicDBDataSet3;
+            this.toxicDBDataSet3BindingSource.Position = 0;
+            // 
+            // infoTableAdapter
+            // 
+            this.infoTableAdapter.ClearBeforeFill = true;
+            // 
+            // infoTableAdapter1
+            // 
+            this.infoTableAdapter1.ClearBeforeFill = true;
+            // 
             // FrmDetailInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -527,6 +726,7 @@
             this.Controls.Add(this.gbToxicQuery);
             this.Controls.Add(this.gbRichText);
             this.Controls.Add(this.gbQueryResult);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDetailInput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "详细信息输入";
@@ -538,11 +738,11 @@
             this.gbOtherInfo.ResumeLayout(false);
             this.gbOtherInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQueryResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -596,5 +796,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AidEye;
         private System.Windows.Forms.DataGridViewTextBoxColumn AidInhalation;
         private System.Windows.Forms.DataGridViewTextBoxColumn AidIngestion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn infoIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn casIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chemicalNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chineseNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn traditionNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rtecsIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn elementDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stateInfoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn odorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn relativeMolecularMassDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn solubilityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn densityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ld50DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn toxicDegreeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn toxicDetailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn healthHarzardDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn environmentHarzardDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aidSkinDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aidEyeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aidInhalationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aidIngestionDataGridViewTextBoxColumn;
     }
 }

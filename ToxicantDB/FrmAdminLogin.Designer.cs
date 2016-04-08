@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdminLogin));
             this.lblAdminId = new System.Windows.Forms.Label();
             this.lblAdminPwd = new System.Windows.Forms.Label();
             this.txtAdminId = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.lblAdminId.Size = new System.Drawing.Size(65, 12);
             this.lblAdminId.TabIndex = 0;
             this.lblAdminId.Text = "登录账号：";
-
             // 
             // lblAdminPwd
             // 
@@ -103,6 +103,7 @@
             this.Controls.Add(this.txtAdminId);
             this.Controls.Add(this.lblAdminPwd);
             this.Controls.Add(this.lblAdminId);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAdminLogin";
             this.Text = "管理员登录";
             this.ResumeLayout(false);

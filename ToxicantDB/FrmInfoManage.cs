@@ -228,6 +228,76 @@ namespace ToxicantDB
 
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            #region 数据验证
+            if (this.txt_ChemicalName.Text.Trim().Length ==0)
+            {
+                MessageBox.Show("化学名不能为空", "保存提示");
+            }
+            //相对分子质量
+            if (!this.objInfoManager.IsNonNegativeFloat(this.txt_RelativeMolecularMass.Text.Trim()))
+            {
+                MessageBox.Show("相对分子质量的值应为非负数字", "保存信息");
+                this.txt_RelativeMolecularMass.SelectAll();
+                this.txt_RelativeMolecularMass.Focus();
+                return;
+            }
+            //溶解度
+            if (!this.objInfoManager.IsNonNegativeFloat(this.txt_Solubility.Text.Trim()))
+            {
+                MessageBox.Show("溶解度的值应为非负数字", "保存信息");
+                this.txt_Solubility.SelectAll();
+                this.txt_Solubility.Focus();
+                return;
+            }
+            //密度
+            if (!this.objInfoManager.IsNonNegativeFloat(this.txt_Density.Text.Trim()))
+            {
+                MessageBox.Show("密度的值应为非负数字", "保存信息");
+                this.txt_Density.SelectAll();
+                this.txt_Density.Focus();
+                return;
+            }
+            #endregion
+
+            string casId = this.dgvInfoList.CurrentRow.Cells["casIdDataGridViewTextBoxColumn"].Value.ToString();//是Name不是DataPropertyName！
+            Info objInfo = (from i in listInfo where i.CasId.Equals(casId) select i).First<Info>();//在泛型集合列表中查找符合的行及其属性（无需去数据库查找）
+            
+            objInfo.ChemicalName=this.txt_ChemicalName.Text.Trim();
+            objInfo.ChineseName=this.txt_ChineseName.Text.Trim();
+            objInfo.TraditionName=this.txt_TraditionName.Text.Trim();
+            objInfo.RtecsId=this.txt_RtecsId.Text.Trim();
+            objInfo.Element=this.txt_Element.Text.Trim();
+            objInfo.StateInfo=this.txt_StateInfo.Text.Trim();
+            objInfo.Odor=this.txt_Odor.Text.Trim();
+            objInfo.Color=this.txt_Color.Text.Trim();
+            objInfo.RelativeMolecularMass=Convert.ToInt32(this.txt_RelativeMolecularMass.Text.Trim());
+            objInfo.Solubility=Convert.ToInt32(this.txt_Solubility.Text.Trim());
+            objInfo.Density=Convert.ToInt32(this.txt_Density.Text.Trim());
+
+            try 
+	        {
+	            //首先断开选择改变事件（防止有些情况的异常）
+                this.dgvInfoList.SelectionChanged -= new EventHandler(this.dgvInfoList_SelectionChanged);
+
+		        objInfoManager.EditBasicInfo(objInfo);
+
+                MessageBox.Show("修改成功", "修改提示");
+                this.dgvInfoList.DataSource = null;
+                this.dgvInfoList.DataSource = this.listInfo;
+	        }
+	        catch (Exception ex)
+	        {
+		
+		        MessageBox.Show(ex.Message, "修改提示");
+	        }
+            //开启选择改变事件
+            this.dgvInfoList.SelectionChanged += new EventHandler(this.dgvInfoList_SelectionChanged);
+            dgvInfoList_SelectionChanged(null, null);//使其立刻进行一次同步
+
+        }
+
         
 
     }

@@ -282,7 +282,29 @@ namespace DAL
 
         #endregion
 
-        //修改详细信息(文本)
+        //修改基本信息(文本)
+        public int EditBasicInfo(Info objInfo)
+        {
+            string sql = " update Info set ChemicalName=@ChemicalName, ChineseName=@ChineseName, TraditionName=@TraditionName, RtecsId=@RtecsId, Element=@Element, StateInfo=@StateInfo, ";
+            sql += " Odor=@Odor, Color=@Color, RelativeMolecularMass=@RelativeMolecularMass, Solubility=@Solubility, Density=@Density where CasId=@CasId ";
+
+            SqlParameter[] param = new SqlParameter[]
+            {
+                new SqlParameter("@CasId",objInfo.CasId),
+                new SqlParameter("@ChemicalName",objInfo.ChemicalName),
+                new SqlParameter("@ChineseName",objInfo.ChineseName),
+                new SqlParameter("@TraditionName",objInfo.TraditionName),
+                new SqlParameter("@RtecsId",objInfo.RtecsId),
+                new SqlParameter("@Element",objInfo.Element),
+                new SqlParameter("@StateInfo",objInfo.StateInfo),
+                new SqlParameter("@Odor",objInfo.Odor),
+                new SqlParameter("@Color",objInfo.Color),
+                new SqlParameter("@RelativeMolecularMass",objInfo.RelativeMolecularMass),
+                new SqlParameter("@Solubility",objInfo.Solubility),
+                new SqlParameter("@Density",objInfo.Density)
+            };
+            return SQLHelper.Update(sql, param);
+        }
         public int EditInfo(Info objInfo)
         {
             string sql = " update Info set ToxicDetail=@ToxicDetail, HealthHarzard=@HealthHarzard, EnvironmentHarzard=@EnvironmentHarzard, AidSkin=@AidSkin, AidEye=@AidEye, AidInhalation=@AidInhalation, AidIngestion=@AidIngestion  where CasId = @CasId ";

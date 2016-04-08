@@ -59,13 +59,18 @@ namespace BLL
             return objInfoService.GetInfos(casId, chemicalName, chineseName, rtecsId, traditionName);
         }
 
+        //修改基本信息(文本)
+        public int EditBasicInfo(Info objInfo)
+        {
+            return objInfoService.EditBasicInfo(objInfo);
+        }
         //修改详细信息(文本)
         public int EditInfo(Info objInfo)
         {
             return objInfoService.EditInfo(objInfo);
         }
 
-        //修改详细信息(文本)
+        //修改其他信息(文本)
         public int EditOtherInfo(Info objInfo)
         {
             return objInfoService.EditOtherInfo(objInfo);

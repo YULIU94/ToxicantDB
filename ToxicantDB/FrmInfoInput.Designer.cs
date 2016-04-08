@@ -61,18 +61,6 @@
             this.gbInputProperty = new System.Windows.Forms.GroupBox();
             this.gbInputInfo = new System.Windows.Forms.GroupBox();
             this.dgvInfoList = new System.Windows.Forms.DataGridView();
-            this.casIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChemicalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChineseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TraditionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RtecsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Element = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StateInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Odor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RelativeMolecularMass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Solubility = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Density = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.infoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.toxicDBDataSet3 = new ToxicantDB.ToxicDBDataSet3();
             this.propertiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -89,6 +77,18 @@
             this.infoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.infoTableAdapter2 = new ToxicantDB.ToxicDBDataSet2TableAdapters.InfoTableAdapter();
             this.infoTableAdapter3 = new ToxicantDB.ToxicDBDataSet3TableAdapters.InfoTableAdapter();
+            this.casIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChemicalName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChineseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TraditionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RtecsId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Element = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StateInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Odor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RelativeMolecularMass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Solubility = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Density = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infoBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toxicDBDataSet3)).BeginInit();
@@ -391,90 +391,6 @@
             this.dgvInfoList.Size = new System.Drawing.Size(962, 346);
             this.dgvInfoList.TabIndex = 9;
             // 
-            // casIdDataGridViewTextBoxColumn
-            // 
-            this.casIdDataGridViewTextBoxColumn.DataPropertyName = "CasId";
-            this.casIdDataGridViewTextBoxColumn.HeaderText = "CasId";
-            this.casIdDataGridViewTextBoxColumn.Name = "casIdDataGridViewTextBoxColumn";
-            this.casIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ChemicalName
-            // 
-            this.ChemicalName.DataPropertyName = "ChemicalName";
-            this.ChemicalName.HeaderText = "ChemicalName";
-            this.ChemicalName.Name = "ChemicalName";
-            this.ChemicalName.ReadOnly = true;
-            // 
-            // ChineseName
-            // 
-            this.ChineseName.DataPropertyName = "ChineseName";
-            this.ChineseName.HeaderText = "ChineseName";
-            this.ChineseName.Name = "ChineseName";
-            this.ChineseName.ReadOnly = true;
-            // 
-            // TraditionName
-            // 
-            this.TraditionName.DataPropertyName = "TraditionName";
-            this.TraditionName.HeaderText = "TraditionName";
-            this.TraditionName.Name = "TraditionName";
-            this.TraditionName.ReadOnly = true;
-            // 
-            // RtecsId
-            // 
-            this.RtecsId.DataPropertyName = "RtecsId";
-            this.RtecsId.HeaderText = "RtecsId";
-            this.RtecsId.Name = "RtecsId";
-            this.RtecsId.ReadOnly = true;
-            // 
-            // Element
-            // 
-            this.Element.DataPropertyName = "Element";
-            this.Element.HeaderText = "Element";
-            this.Element.Name = "Element";
-            this.Element.ReadOnly = true;
-            // 
-            // StateInfo
-            // 
-            this.StateInfo.DataPropertyName = "StateInfo";
-            this.StateInfo.HeaderText = "StateInfo";
-            this.StateInfo.Name = "StateInfo";
-            this.StateInfo.ReadOnly = true;
-            // 
-            // Odor
-            // 
-            this.Odor.DataPropertyName = "Odor";
-            this.Odor.HeaderText = "Odor";
-            this.Odor.Name = "Odor";
-            this.Odor.ReadOnly = true;
-            // 
-            // Color
-            // 
-            this.Color.DataPropertyName = "Color";
-            this.Color.HeaderText = "Color";
-            this.Color.Name = "Color";
-            this.Color.ReadOnly = true;
-            // 
-            // RelativeMolecularMass
-            // 
-            this.RelativeMolecularMass.DataPropertyName = "RelativeMolecularMass";
-            this.RelativeMolecularMass.HeaderText = "RelativeMolecularMass";
-            this.RelativeMolecularMass.Name = "RelativeMolecularMass";
-            this.RelativeMolecularMass.ReadOnly = true;
-            // 
-            // Solubility
-            // 
-            this.Solubility.DataPropertyName = "Solubility";
-            this.Solubility.HeaderText = "Solubility";
-            this.Solubility.Name = "Solubility";
-            this.Solubility.ReadOnly = true;
-            // 
-            // Density
-            // 
-            this.Density.DataPropertyName = "Density";
-            this.Density.HeaderText = "Density";
-            this.Density.Name = "Density";
-            this.Density.ReadOnly = true;
-            // 
             // infoBindingSource3
             // 
             this.infoBindingSource3.DataMember = "Info";
@@ -561,6 +477,90 @@
             // infoTableAdapter3
             // 
             this.infoTableAdapter3.ClearBeforeFill = true;
+            // 
+            // casIdDataGridViewTextBoxColumn
+            // 
+            this.casIdDataGridViewTextBoxColumn.DataPropertyName = "CasId";
+            this.casIdDataGridViewTextBoxColumn.HeaderText = "CasId编号";
+            this.casIdDataGridViewTextBoxColumn.Name = "casIdDataGridViewTextBoxColumn";
+            this.casIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ChemicalName
+            // 
+            this.ChemicalName.DataPropertyName = "ChemicalName";
+            this.ChemicalName.HeaderText = "化学名";
+            this.ChemicalName.Name = "ChemicalName";
+            this.ChemicalName.ReadOnly = true;
+            // 
+            // ChineseName
+            // 
+            this.ChineseName.DataPropertyName = "ChineseName";
+            this.ChineseName.HeaderText = "中文名";
+            this.ChineseName.Name = "ChineseName";
+            this.ChineseName.ReadOnly = true;
+            // 
+            // TraditionName
+            // 
+            this.TraditionName.DataPropertyName = "TraditionName";
+            this.TraditionName.HeaderText = "俗名";
+            this.TraditionName.Name = "TraditionName";
+            this.TraditionName.ReadOnly = true;
+            // 
+            // RtecsId
+            // 
+            this.RtecsId.DataPropertyName = "RtecsId";
+            this.RtecsId.HeaderText = "RtecsId编号";
+            this.RtecsId.Name = "RtecsId";
+            this.RtecsId.ReadOnly = true;
+            // 
+            // Element
+            // 
+            this.Element.DataPropertyName = "Element";
+            this.Element.HeaderText = "所含元素";
+            this.Element.Name = "Element";
+            this.Element.ReadOnly = true;
+            // 
+            // StateInfo
+            // 
+            this.StateInfo.DataPropertyName = "StateInfo";
+            this.StateInfo.HeaderText = "状态";
+            this.StateInfo.Name = "StateInfo";
+            this.StateInfo.ReadOnly = true;
+            // 
+            // Odor
+            // 
+            this.Odor.DataPropertyName = "Odor";
+            this.Odor.HeaderText = "气味";
+            this.Odor.Name = "Odor";
+            this.Odor.ReadOnly = true;
+            // 
+            // Color
+            // 
+            this.Color.DataPropertyName = "Color";
+            this.Color.HeaderText = "颜色";
+            this.Color.Name = "Color";
+            this.Color.ReadOnly = true;
+            // 
+            // RelativeMolecularMass
+            // 
+            this.RelativeMolecularMass.DataPropertyName = "RelativeMolecularMass";
+            this.RelativeMolecularMass.HeaderText = "相对分子质量";
+            this.RelativeMolecularMass.Name = "RelativeMolecularMass";
+            this.RelativeMolecularMass.ReadOnly = true;
+            // 
+            // Solubility
+            // 
+            this.Solubility.DataPropertyName = "Solubility";
+            this.Solubility.HeaderText = "溶解度";
+            this.Solubility.Name = "Solubility";
+            this.Solubility.ReadOnly = true;
+            // 
+            // Density
+            // 
+            this.Density.DataPropertyName = "Density";
+            this.Density.HeaderText = "密度";
+            this.Density.Name = "Density";
+            this.Density.ReadOnly = true;
             // 
             // FrmInfoInput
             // 
